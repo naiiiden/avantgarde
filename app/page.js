@@ -1,5 +1,12 @@
+import data from "@/public/chairs.json";
+
 export default function Home() {
+  console.log(data);
+
   return (
-    <h1>hi</h1>
+    <div>
+      <h1>hi</h1>
+
+    </div>
   )
 }
