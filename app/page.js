@@ -1,7 +1,7 @@
 import data from "@/public/chairs.json";
 
 export default function Home() {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div style={{ backgroundImage: `url(${data[0].image})` }} className="bg-black h-screen bg-cover bg-center grid items-end">
