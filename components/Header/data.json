@@ -1,4 +1,17 @@
 {
     "name": "Avantgarde",
-    "links": []
+    "links": [
+        {
+            "name": "Catalogue",
+            "url": ""
+        },
+        {
+            "name": "Search",
+            "url": ""
+        },
+        {
+            "name": "Cart",
+            "url": ""
+        }
+    ]
 }
