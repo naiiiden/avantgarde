@@ -9,8 +9,9 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 text-white p-4 font-semibold text-lg flex flex-col justify-between w-full">
-            {/* <Link href="/">{data.name}</Link> */}
-            <Image className="w-full" src={avantgarde} alt={data.name}/>
+            <Link href="/">
+                <Image className="w-full" priority src={avantgarde} alt={data.name}/>
+            </Link>
             <nav>
                 <ul className="text-end">
                     {data.links.map((link) => 
