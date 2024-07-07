@@ -80,16 +80,6 @@
         "quantity": 5
     },
     {
-        "image": "/chair9.jpg",
-        "name": "S1 stool",
-        "creator": "Patrick Jouin",
-        "date": "2004/2004",
-        "medium": "Powdered polyamide resin, made by laser sintering",
-        "dimensions": "15 3/4 × 12 5/8 in.",
-        "price": 1000,
-        "quantity": 5
-    },
-    {
         "image": "/chair10.jpg",
         "name": "Visible Structures armchair",
         "creator": "nendo",
