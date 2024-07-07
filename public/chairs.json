@@ -240,22 +240,52 @@
         "quantity": 5
     },
     {
-        "image": "/chair25.jpg",
-        "name": "Chaise Lounge",
-        "creator": "Marcel Breuer",
-        "date": "1936/1936",
-        "medium": "Sycamore plywood and maple",
-        "dimensions": "71.8 × 60.6 × 141 cm (28 1/4 × 23 7/8 × 55 1/2 in.)",
+        "image": "/chair27.jpg",
+        "name": "\"Airline\" Armchair",
+        "creator": "Kem Weber",
+        "date": "1934",
+        "medium": "Birch, ash, and Naugahyde",
+        "dimensions": "30 × 32 × 25 in. (76.2 × 81.28 × 63.5 cm)",
         "price": 10000,
         "quantity": 5
     },
     {
-        "image": "/chair25.jpg",
-        "name": "Armchair",
-        "creator": "Bernardi, Bernardo",
-        "date": "1961",
-        "medium": "beech wood, calfskin",
-        "dimensions": "68 cm x 68 cm x 68 cm",
+        "image": "/chair28.jpg",
+        "name": "Contour Lounge Chair",
+        "creator": "Vladimir Kagan",
+        "date": "1953",
+        "medium": "Wood and leather upholstery",
+        "dimensions": "w76.8 x h87 x d90.2 cm (overall)",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair29.jpg",
+        "name": "Parallel Bar System Lounge Chair",
+        "creator": "Florence Schust Knoll",
+        "date": "1955",
+        "medium": "Chrome and fabric",
+        "dimensions": "77 x 64 x 77 cm",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair30.jpg",
+        "name": "\"Superlight\" chair",
+        "creator": "Emeco",
+        "date": "2004",
+        "medium": "Brushed and anodized aluminum",
+        "dimensions": "Overall: 31 3/4 x 16 1/2 x 20 1/2 in. (80.645 x 41.91 x 52.07 cm)",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair31.jpg",
+        "name": "Brno chair",
+        "creator": "Ludwig Mies van der Rohe",
+        "date": "1930",
+        "medium": "Chrome and leather",
+        "dimensions": "79 x 59 x 57 cm",
         "price": 10000,
         "quantity": 5
     }

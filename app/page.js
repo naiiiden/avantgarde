@@ -12,7 +12,13 @@ export default function Home() {
         <h1 className="text-white font-semibold text-xl p-4 max-w-72 ml-auto lg:text-3xl lg:max-w-[25rem]">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
       </div>
       <div className="h-screen bg-green-500">
-
+        <ul className="grid grid-cols-2">
+          {data.map((item, index) =>
+            <li key={index}>
+              <img src={item.image}/>
+            </li>
+          )}
+        </ul>
       </div>
     </>
   )
