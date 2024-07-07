@@ -5,7 +5,58 @@
         "creator": "Ron Arad",
         "date": "2006/2006",
         "medium": "Mirror-polished aluminum alloy and anodized woven-aluminum mesh",
+        "dimensions": "110.5 x 43.5 x 196 cm. (43.5 x 17.1 x 77.2 in.)",
         "price": 4800,
+        "quantity": 5
+    },
+    {
+        "image": "/chair2.jpg",
+        "name": "Bone (prototype)",
+        "creator": "Joris Laarman",
+        "date": "2008/2008",
+        "medium": "Cast marble resin and ground bone china",
+        "dimensions": "74 x 87.6 x 97.8 cm. (29⅛ x 34½ x 38½ in.)",
+        "price": 3000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair3.jpg",
+        "name": "Embryo (prototype)",
+        "creator": "Marc Newson",
+        "date": "1988/1988",
+        "medium": "Neoprene, aluminum, and chromed steel",
+        "dimensions": "80 x 84 x 80 cm. (31 1/2 x 33 7/16 x 31 1/2 in.)",
+        "price": 9000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair4.jpg",
+        "name": "Ghost",
+        "creator": "Tomu Katayanagi",
+        "date": "1987/1987",
+        "medium": "glass",
+        "dimensions": "62.3 x 92.4 x 77.5 x 1.2 cm.",
+        "price": 6000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair5.jpg",
+        "name": "Paper Chair",
+        "creator": "Mathias Bengtsson",
+        "date": "1987/1987",
+        "medium": "paper (fiber product), glue",
+        "dimensions": "74.9 × 88.9 × 74.9 cm. (29 1/2 × 35 × 29 1/2 in.)",
+        "price": 7000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair6.jpg",
+        "name": "Honey-Pop",
+        "creator": "Tokujin Yoshioka",
+        "date": "2001",
+        "medium": "paper",
+        "dimensions": "79.4 × 81.3 × 81.3 cm (31 × 32 × 32 in.)",
+        "price": 8000,
         "quantity": 5
     }
 ]
