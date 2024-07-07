@@ -11,8 +11,11 @@ export default function HeaderLogo() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const newWidth = Math.max(1, 100 - window.scrollY / 13) + "%";
-            setImageWidth(newWidth);
+            if (window.scrollY === 0) {
+                setImageWidth("100%");
+            } else {
+                setImageWidth("1%");
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -22,7 +25,7 @@ export default function HeaderLogo() {
     }, []);
 
     return (
-        <Link style={{ width: imageWidth }} href="/" className="w-full min-w-40">
+        <Link style={{ width: imageWidth }} href="/" className="w-full min-w-40 transition-all duration-300">
             <Image className="w-full" priority src={avantgarde} alt={data.name}/>
         </Link>
     )
