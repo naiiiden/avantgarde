@@ -198,5 +198,65 @@
         "dimensions": "23 1/8 x 27 7/8 x 25 1/8in. (58.7 x 70.8 x 63.8cm)",
         "price": 10000,
         "quantity": 5
+    },
+    {
+        "image": "/chair21.jpg",
+        "name": "High Armchair",
+        "creator": "Oscar Niemeyer",
+        "date": "1971",
+        "medium": "Leather, Stainless Steel",
+        "dimensions": "29.53 in (75 cm) x 29.53 in (75 cm) x 45.28 in (115 cm)",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair22.jpg",
+        "name": "Easy Armchair",
+        "creator": "Oscar Niemeyer",
+        "date": "1971",
+        "medium": "Die-cut corrugated cardboard and masonite",
+        "dimensions": "29 1/2 × 24 5/8 × 38 3/4 in. (74.93 × 62.55 × 98.43 cm)",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair23.jpg",
+        "name": "Armchair (for Hous'hill, Catherine Cranston's residence, Glasgow, Scotland)",
+        "creator": "Charles Rennie Mackintosh",
+        "date": "1904/1904",
+        "medium": "stained wood, glass, upholstery (replacement fabric)",
+        "dimensions": "47 × 24 1/4 × 25 in.",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair24.jpg",
+        "name": "Barcelona Chair",
+        "creator": "Ludwig Mies van der Rohe",
+        "date": "1929",
+        "medium": "chrome, steel (alloy), leather",
+        "dimensions": "72 x 72 x 77 cm 40 x 40 x 40 cm",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair25.jpg",
+        "name": "Chaise Lounge",
+        "creator": "Marcel Breuer",
+        "date": "1936/1936",
+        "medium": "Sycamore plywood and maple",
+        "dimensions": "71.8 × 60.6 × 141 cm (28 1/4 × 23 7/8 × 55 1/2 in.)",
+        "price": 10000,
+        "quantity": 5
+    },
+    {
+        "image": "/chair25.jpg",
+        "name": "Armchair",
+        "creator": "Bernardi, Bernardo",
+        "date": "1961",
+        "medium": "beech wood, calfskin",
+        "dimensions": "68 cm x 68 cm x 68 cm",
+        "price": 10000,
+        "quantity": 5
     }
 ]
