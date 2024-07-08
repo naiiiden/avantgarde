@@ -11,14 +11,12 @@ export default function HomeProductSilder() {
     }, []);
 
     return (
-        <div>
-            <swiper-container class="w-full grid">
-                {data.map((item, index) => 
-                    <swiper-slide key={index}>
-                        <Image src={item.image} width={200} height={200} alt={item.name}/>
-                    </swiper-slide>
-                )}
-            </swiper-container>
-        </div>
+        <swiper-container class="grid fixed">
+            {data.map((item, index) => 
+                <swiper-slide key={index}>
+                    <div style={{ backgroundImage: `url(${item.image})` }} className="bg-black h-screen bg-cover bg-center"></div>
+                </swiper-slide>
+            )}
+        </swiper-container>
     )
 }

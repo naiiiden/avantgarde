@@ -11,8 +11,8 @@ export default function Home() {
 
   return (
     <>
-      <div style={{ backgroundImage: `url(${randomItemFromCollection.image})` }} className="bg-black h-screen bg-cover bg-center flex flex-col-reverse">
-        <h1 className="text-white font-semibold text-xs p-4 ml-auto lg:text-xs">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
+      <div className="bg-black h-screen bg-cover bg-center flex flex-col-reverse">
+        <h1 className="text-white font-semibold text-xs p-4 ml-auto relative z-10 lg:text-xs">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
         <HomeProductSilder/>
       </div>
     </>
