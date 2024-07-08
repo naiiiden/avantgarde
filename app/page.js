@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  console.log(data);
+  // console.log(data);
 
   const randomItemFromCollection = data[(Math.floor(Math.random() * data.length))];
   console.log(1, randomItemFromCollection);
