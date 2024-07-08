@@ -1,3 +1,4 @@
+import HomeProductSilder from "@/components/HomeProductSlider/HomeProductSlider";
 import data from "@/public/chairs.json";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,8 +11,9 @@ export default function Home() {
 
   return (
     <>
-      <div style={{ backgroundImage: `url(${randomItemFromCollection.image})` }} className="bg-black h-screen bg-cover bg-center grid items-end">
+      <div style={{ backgroundImage: `url(${randomItemFromCollection.image})` }} className="bg-black h-screen bg-cover bg-center flex flex-col-reverse">
         <h1 className="text-white font-semibold text-xs p-4 ml-auto lg:text-xs">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
+        <HomeProductSilder/>
       </div>
     </>
   )
