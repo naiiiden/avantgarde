@@ -8,7 +8,7 @@ export default function HomeProductSilder() {
     const sliderRef = useRef(null);
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-    const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
+    const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
     const [productLinkHref, setProductLinkHref] = useState(null);
 
     const updateCursorPosition = (e) => {
@@ -16,7 +16,7 @@ export default function HomeProductSilder() {
         const cursorX = e.clientX - rect.left;
         const cursorY = e.clientY - rect.top;
     
-        setCursorPosition({ top: `${cursorY}px`, left: `${cursorX}px` });
+        setCursorPosition({ top: `${cursorY - 20}px`, left: `${cursorX - 59}px` });
     };
 
     useEffect(() => {
