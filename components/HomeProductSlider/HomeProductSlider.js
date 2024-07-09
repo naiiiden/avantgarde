@@ -48,10 +48,10 @@ export default function HomeProductSilder() {
                 <button aria-label="Prev slide" className="cursor-none fixed w-1/2 left-0 top-0 h-full rotate-180" onClick={() => sliderRef.current.swiper.slidePrev()}></button>
                 <button aria-label="Next slide" className="cursor-none fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
                 <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-40 text-white">{currentSlideIndex + 1} / {data.length}</div>
-                {productLinkHref !== null && <Link href={productLinkHref} className="absolute font-semibold z-40 bottom-12 right-4 py-2 px-8 bg-black text-white">
-                    View product
-                </Link>}
             </div>
+            {productLinkHref !== null && <Link href={productLinkHref} className="absolute font-semibold z-40 bottom-12 right-4 py-2 px-8 bg-black text-white">
+                View product
+            </Link>}
         </>
     )
 }
