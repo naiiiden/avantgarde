@@ -39,10 +39,10 @@ export default function HomeProductSilder() {
                     </swiper-slide>
                 )}
             </swiper-container>
-            <div className="z-10 fixed inset-0" onMouseMove={updateCursorPosition}>
-                <button aria-label="Prev slide" className="cursor-none border fixed w-1/2 left-0 top-0 h-full rotate-180" onClick={() => sliderRef.current.swiper.slidePrev()}></button>
-                <button aria-label="Next slide" className="cursor-none border fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
-                <div style={{ ...cursorPosition }} className="absolute -z-10 font-semibold text-5xl tracking-tighter min-w-36">{currentSlideIndex + 1} / {data.length}</div>
+            <div className="z-10 fixed inset-0 group" onMouseMove={updateCursorPosition}>
+                <button aria-label="Prev slide" className="cursor-none fixed w-1/2 left-0 top-0 h-full rotate-180" onClick={() => sliderRef.current.swiper.slidePrev()}></button>
+                <button aria-label="Next slide" className="cursor-none fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
+                <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-36 text-white">{currentSlideIndex + 1} / {data.length}</div>
             </div>
         </>
     )
