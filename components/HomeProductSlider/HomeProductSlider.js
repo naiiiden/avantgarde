@@ -11,10 +11,10 @@ export default function HomeProductSilder() {
     }, []);
 
     return (
-        <swiper-container class="grid fixed">
+        <swiper-container class="grid w-full fixed">
             {data.map((item, index) => 
                 <swiper-slide key={index}>
-                    <div style={{ backgroundImage: `url(${item.image})` }} className="bg-black h-screen bg-cover bg-center"></div>
+                    <div style={{ backgroundImage: `url(${item.image})` }} className="h-screen bg-cover bg-center"></div>
                 </swiper-slide>
             )}
         </swiper-container>
