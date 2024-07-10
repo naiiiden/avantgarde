@@ -40,7 +40,7 @@ export default function HomeProductSilder() {
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10 lg:static" loop>
                 {data.map((item, index) => 
                     <swiper-slide key={index}>
-                        <div style={{ backgroundImage: `url(${item.image})` }} className="h-screen lg:h-[125vh] bg-cover bg-center"></div>
+                        <div style={{ backgroundImage: `url(${item.image})` }} className="h-screen lg:h-[125vh] xl:h-[175vh] 2xl:h-[200vh] xl:bg-[length:100%_100%] bg-cover bg-center"></div>
                     </swiper-slide>
                 )}
             </swiper-container>
