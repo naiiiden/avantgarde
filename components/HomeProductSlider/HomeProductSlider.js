@@ -37,10 +37,10 @@ export default function HomeProductSilder() {
 
     return (
         <>
-            <swiper-container ref={sliderRef} class="grid w-full fixed z-10" loop>
+            <swiper-container ref={sliderRef} class="grid w-full fixed z-10 lg:static" loop>
                 {data.map((item, index) => 
                     <swiper-slide key={index}>
-                        <div style={{ backgroundImage: `url(${item.image})` }} className="h-screen bg-cover bg-center"></div>
+                        <div style={{ backgroundImage: `url(${item.image})` }} className="h-screen lg:h-[125vh] bg-cover bg-center"></div>
                     </swiper-slide>
                 )}
             </swiper-container>
@@ -49,7 +49,7 @@ export default function HomeProductSilder() {
                 <button aria-label="Next slide" className="cursor-none fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
                 <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-40 text-white">{currentSlideIndex + 1} / {data.length}</div>
             </div>
-            {productLinkHref !== null && <Link href={productLinkHref} className="absolute font-semibold z-40 bottom-12 right-4 py-2 px-8 bg-black text-white">
+            {productLinkHref !== null && <Link href={productLinkHref} className="fixed font-semibold z-40 bottom-20 sm:bottom-16 md:bottom-12 lg:bottom-[3.25rem] right-4 py-2 px-8 bg-black text-white">
                 View product
             </Link>}
         </>
