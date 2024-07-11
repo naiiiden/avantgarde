@@ -49,9 +49,12 @@ export default function HomeProductSilder() {
                 <button aria-label="Next slide" className="cursor-none fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
                 <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-40 text-white">{currentSlideIndex + 1} / {data.length}</div>
             </div>
-            {productLinkHref !== null && <Link href={productLinkHref} className="fixed font-semibold z-40 bottom-20 sm:bottom-16 md:bottom-12 lg:bottom-[3.25rem] right-4 py-2 px-8 bg-black text-white">
-                View product
-            </Link>}
+            <div className="fixed z-40 max-lg:w-full flex items-center justify-between bottom-20 sm:bottom-16 md:bottom-12 lg:bottom-[3.25rem] right-0 px-4">
+                <div className="font-semibold text-lg tracking-tighter text-white text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
+                {productLinkHref !== null && <Link href={productLinkHref} className="font-semibold py-2 px-8 bg-black text-white">
+                    View product
+                </Link>}
+            </div>
         </>
     )
 }
