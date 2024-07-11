@@ -9,7 +9,7 @@ export default function HomeProductSilder() {
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
-    const [productLinkHref, setProductLinkHref] = useState(data[0].name);
+    const [productLinkHref, setProductLinkHref] = useState(data[0].urlHandle);
 
     const updateCursorPosition = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -25,7 +25,7 @@ export default function HomeProductSilder() {
         const swiper = sliderRef.current.swiper;
         const handleSlideChange = () => {
             setCurrentSlideIndex(swiper.realIndex);
-            setProductLinkHref(data[swiper.realIndex].name);
+            setProductLinkHref(data[swiper.realIndex].urlHandle);
             console.log(swiper.realIndex);
         };
 
@@ -51,7 +51,7 @@ export default function HomeProductSilder() {
             </div>
             <div className="fixed z-40 max-lg:w-full flex items-center justify-between bottom-20 sm:bottom-16 md:bottom-12 lg:bottom-[3.25rem] right-0 px-4">
                 <div className="font-semibold text-lg tracking-tighter text-white text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
-                {productLinkHref !== null && <Link href={productLinkHref} className="font-semibold py-2 px-8 bg-black text-white">
+                {productLinkHref !== null && <Link href={`product/${productLinkHref}`} className="font-semibold py-2 px-8 bg-black text-white">
                     View product
                 </Link>}
             </div>
