@@ -26,7 +26,7 @@ export default function HomeProductSlider() {
         const localStorageCurrentSlideIndex = parseInt(localStorage.getItem('swiperIndex'));
 
         if (localStorageCurrentSlideIndex !== null) {
-            swiper.slideTo(localStorageCurrentSlideIndex);
+            swiper.slideTo(localStorageCurrentSlideIndex, 0);
             
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
             setProductLinkHref(data[localStorageCurrentSlideIndex].urlHandle);
@@ -42,7 +42,7 @@ export default function HomeProductSlider() {
         };
 
         swiper.on('slideChange', handleSlideChange);
-        
+
         return () => {
             swiper.off('slideChange', handleSlideChange);
         };
