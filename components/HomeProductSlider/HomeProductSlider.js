@@ -4,7 +4,7 @@ import { register } from "swiper/element/bundle";
 import Link from "next/link";
 import data from "@/public/chairs.json";
 
-export default function HomeProductSilder() {
+export default function HomeProductSlider() {
     const sliderRef = useRef(null);
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -23,13 +23,26 @@ export default function HomeProductSilder() {
         register();
 
         const swiper = sliderRef.current.swiper;
+        const localStorageCurrentSlideIndex = parseInt(localStorage.getItem('swiperIndex'));
+
+        if (localStorageCurrentSlideIndex !== null) {
+            swiper.slideTo(localStorageCurrentSlideIndex);
+            
+            setCurrentSlideIndex(localStorageCurrentSlideIndex);
+            setProductLinkHref(data[localStorageCurrentSlideIndex].urlHandle);
+        }
+
         const handleSlideChange = () => {
-            setCurrentSlideIndex(swiper.realIndex);
-            setProductLinkHref(data[swiper.realIndex].urlHandle);
-            console.log(swiper.realIndex);
+            const newIndex = swiper.realIndex;
+
+            setCurrentSlideIndex(newIndex);
+            setProductLinkHref(data[newIndex].urlHandle);
+
+            localStorage.setItem('swiperIndex', newIndex);
         };
 
         swiper.on('slideChange', handleSlideChange);
+        
         return () => {
             swiper.off('slideChange', handleSlideChange);
         };
