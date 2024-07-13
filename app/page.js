@@ -1,13 +1,7 @@
 import HomeProductSilder from "@/components/HomeProductSlider/HomeProductSlider";
 import Header from "@/components/Header/Header";
-import data from "@/public/chairs.json";
 
 export default function Home() {
-  // console.log(data);
-
-  const randomItemFromCollection = data[(Math.floor(Math.random() * data.length))];
-  console.log(1, randomItemFromCollection);
-
   return (
     <>
       <Header/>
