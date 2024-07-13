@@ -4,8 +4,8 @@ import data from "@/public/chairs.json";
 
 export default function Page() {
     return (
-        <main>
-            <ul className="p-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <main className="">
+            <ul className="grid grid-cols-2 lg:grid-cols-4">
                 {data.map((item, index) =>
                     <li key={index}>
                         <Link href={item.name}>
