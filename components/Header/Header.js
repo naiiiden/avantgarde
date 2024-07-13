@@ -3,10 +3,10 @@ import data from "./data.json";
 
 import HeaderLogo from "./HeaderLogo";
 
-export default function Header({ className }) {
+export default function Header({ className, maxWidth }) {
     return (
         <header className={`${className} fixed z-20 top-0 text-white p-4 font-semibold flex flex-wrap justify-between gap-4 w-full`}>
-            <HeaderLogo/>
+            <HeaderLogo maxWidth={maxWidth}/>
             <nav className="ml-auto">
                 <ul className="text-end grid gap-3">
                     {data.links.map((link) => 

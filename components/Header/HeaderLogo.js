@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 import avantgarde from "@/public/avantgarde.svg";
 
-export default function HeaderLogo() {
+export default function HeaderLogo({ maxWidth }) {
     const [imageWidth, setImageWidth] = useState("100%");
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export default function HeaderLogo() {
     }, []);
 
     return (
-        <Link style={{ width: imageWidth }} href="/" className="w-full min-w-40 transition-all duration-300">
+        <Link style={{ width: imageWidth }} href="/" className={`w-full min-w-40 ${maxWidth} transition-all duration-300`}>
             <Image className="w-full" priority src={avantgarde} alt={data.name}/>
         </Link>
     )
