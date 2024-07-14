@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import data from "@/public/chairs.json";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
-import CatalogueSortProductsViewForm from "@/components/CatalogueSortProductsViewForm/CatalogueSortProductsViewForm";
+import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
 
 export default function Page({ searchParams }) {
     console.log(searchParams);
@@ -41,18 +41,32 @@ export default function Page({ searchParams }) {
             <div className="flex flex-wrap justify-between gap-4">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm/>
-                <CatalogueSortProductsViewForm/>
+                <CatalogueProductsViewForm/>
             </div>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {data.map((item, index) =>
-                    <li key={index}>
-                        <Link href={`product/${item.urlHandle}`}>
-                            <Image className="" src={item.image} width={1500} height={1500} alt=""/>
-                            <h2 className="top-0 p-1.5 text-sm">{item.name}</h2>
-                        </Link>
-                    </li>
-                )}
-            </ul>
+            {searchParams.view === "grid" && 
+                <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {data.map((item, index) =>
+                        <li key={index}>
+                            <Link href={`product/${item.urlHandle}`}>
+                                <Image className="" src={item.image} width={1500} height={1500} alt=""/>
+                                <h2 className="top-0 p-1.5 text-sm">{item.name}</h2>
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            }
+            {searchParams.view === "index" && 
+                <ul className="grid gap-4">
+                    {data.map((item, index) =>
+                        <li key={index}>
+                            <Link href={`product/${item.urlHandle}`}>
+                                <Image className="" src={item.image} width={1500} height={1500} alt=""/>
+                                <h2 className="top-0 p-1.5 text-sm">{item.name}</h2>
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            }
         </main>
     )
 }
