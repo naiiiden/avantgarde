@@ -25,7 +25,7 @@ export default function Page({ searchParams }) {
         <main className="px-4 font-medium">
             <h1 className="sr-only">Catalogue</h1>
             <div className="flex flex-wrap justify-between gap-4">
-                <p className="w-fit">{data.length} products</p>
+                <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm/>
             </div>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
