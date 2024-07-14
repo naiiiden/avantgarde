@@ -15,7 +15,7 @@ export default function CatalogueSortProductsForm() {
 
     return (
         <form className="pb-4 flex flex-wrap gap-x-2 justify-end">
-            <p>Sort by:</p>
+            <p className="font-semibold">Sort by:</p>
             <label>
                 <input checked={searchParams.get('sortBy') === "alphabeticalAtoZ"} onChange={(e) => handleSort(e.target.id)} name="sort-by" id="alphabeticalAtoZ" className="peer opacity-0 absolute" type="radio"/>
                 <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline ">alphabetical, A-Z</span>

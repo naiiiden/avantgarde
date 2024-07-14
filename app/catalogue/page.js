@@ -2,8 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import data from "@/public/chairs.json";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
+import CatalogueSortProductsViewForm from "@/components/CatalogueSortProductsViewForm/CatalogueSortProductsViewForm";
 
 export default function Page({ searchParams }) {
+    console.log(searchParams);
+
+    // switch (searchParams.view) {
+    //     case "index":
+    //         data.sort((a, b) => a.name.localeCompare(b.name));
+    //         break;
+    //     case "grid":
+    //         data.sort((a, b) => b.name.localeCompare(a.name));
+    //         break;
+    //     default:
+    //         break;
+    // }
+
     switch (searchParams.sortBy) {
         case "alphabeticalAtoZ":
             data.sort((a, b) => a.name.localeCompare(b.name));
@@ -27,6 +41,7 @@ export default function Page({ searchParams }) {
             <div className="flex flex-wrap justify-between gap-4">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm/>
+                <CatalogueSortProductsViewForm/>
             </div>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {data.map((item, index) =>
