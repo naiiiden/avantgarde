@@ -6,19 +6,6 @@ import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/Ca
 import HeaderGutter from "@/components/Header/HeaderGutter";
 
 export default function Page({ searchParams }) {
-    console.log(searchParams);
-
-    // switch (searchParams.view) {
-    //     case "index":
-    //         data.sort((a, b) => a.name.localeCompare(b.name));
-    //         break;
-    //     case "grid":
-    //         data.sort((a, b) => b.name.localeCompare(a.name));
-    //         break;
-    //     default:
-    //         break;
-    // }
-
     switch (searchParams.sortBy) {
         case "alphabeticalAtoZ":
             data.sort((a, b) => a.name.localeCompare(b.name));
