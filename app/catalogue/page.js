@@ -10,9 +10,7 @@ export default function Page() {
                     <li key={index} className="relative">
                         <Link href={`product/${item.urlHandle}`}>
                             <Image className="" src={item.image} width={1500} height={1500} alt=""/>
-                            <div className="absolute top-0 text-white font-medium">
-                                <h2>{item.name}</h2>
-                            </div>
+                            <h2 className="top-0 p-1.5 text-sm font-medium">{item.name}</h2>
                         </Link>
                     </li>
                 )}
