@@ -10,6 +10,10 @@ export default function Page({ searchParams }) {
         searchParams.view = 'grid';
     }
 
+    if (!searchParams.sortBy) {
+        searchParams.sortBy = 'alphabeticalAtoZ';
+    }
+
     switch (searchParams.sortBy) {
         case "alphabeticalAtoZ":
             data.sort((a, b) => a.name.localeCompare(b.name));
@@ -34,7 +38,7 @@ export default function Page({ searchParams }) {
                 <h1 className="sr-only">Catalogue</h1>
                 <div className="flex flex-wrap justify-between gap-4">
                     <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
-                    <CatalogueSortProductsForm/>
+                    <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
                     <CatalogueProductsViewForm currentView={searchParams.view}/>
                 </div>
                 {searchParams.view === "grid" && 
