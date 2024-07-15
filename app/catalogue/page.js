@@ -6,6 +6,10 @@ import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/Ca
 import HeaderGutter from "@/components/Header/HeaderGutter";
 
 export default function Page({ searchParams }) {
+    if (!searchParams.view) {
+        searchParams.view = 'grid';
+    }
+
     switch (searchParams.sortBy) {
         case "alphabeticalAtoZ":
             data.sort((a, b) => a.name.localeCompare(b.name));
@@ -31,7 +35,7 @@ export default function Page({ searchParams }) {
                 <div className="flex flex-wrap justify-between gap-4">
                     <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                     <CatalogueSortProductsForm/>
-                    <CatalogueProductsViewForm/>
+                    <CatalogueProductsViewForm currentView={searchParams.view}/>
                 </div>
                 {searchParams.view === "grid" && 
                     <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
