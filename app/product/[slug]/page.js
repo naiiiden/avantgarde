@@ -24,7 +24,7 @@ export default function Page({ params }) {
                         <p><span className="font-semibold">Material(s):</span> {currentProduct.medium}</p>
                         <p><span className="font-semibold">Dimensions: </span>{currentProduct.dimensions}</p>
                         <p><span className="font-semibold">Price:</span> €{currentProduct.price}</p>
-                        <button className="mt-4 font-semibold bg-black text-white w-full p-2">Add to cart</button>
+                        <button className="mt-4 font-semibold bg-black text-white w-full p-2 uppercase">Add to cart</button>
                     </div>
                 </div>
             </main>
