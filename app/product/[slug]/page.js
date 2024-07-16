@@ -16,14 +16,16 @@ export default function Page({ params }) {
         <>
             <Header className={"fixed invert"}/>
             <HeaderGutter/>
-            <main className="px-4 pb-4">
-                <Image className="" src={currentProduct.image} width={1500} height={1500} alt=""/>
-                <div className="fixed bottom-0 right-0 px-4">
-                    <h1 className="font-semibold">{currentProduct.name}</h1>
-                    <p>by {currentProduct.creator}</p>
-                    <p>Material(s): {currentProduct.medium}</p>
-                    <p>Dimensions: {currentProduct.dimensions}</p>
-                    <p className="font-semibold">€{currentProduct.price}</p>
+            <main className="px-4 pb-4 lg:flex gap-4">
+                <Image className="lg:w-9/12 xl:w-4/5 2xl:w-5/6" src={currentProduct.image} width={1500} height={1500} alt=""/>
+                <div>
+                    <div className="sticky top-0 lg:text-sm 2xl:text-base">
+                        <h1 className="font-semibold">{currentProduct.name}</h1>
+                        <p>by {currentProduct.creator}</p>
+                        <p>Material(s): {currentProduct.medium}</p>
+                        <p>Dimensions: {currentProduct.dimensions}</p>
+                        <p className="font-semibold">€{currentProduct.price}</p>
+                    </div>
                 </div>
             </main>
         </>
