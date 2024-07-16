@@ -16,7 +16,7 @@ export default function Page({ params }) {
         <>
             <Header className={"fixed invert"}/>
             <HeaderGutter/>
-            <main className="px-4">
+            <main className="px-4 pb-4">
                 <Image className="" src={currentProduct.image} width={1500} height={1500} alt=""/>
                 <div className="fixed bottom-0 right-0 px-4">
                     <h1 className="font-semibold">{currentProduct.name}</h1>
