@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export default function HeaderGutter() {
-    const [headerHeight, setHeaderHeight] = useState(0);
+    const [headerHeight, setHeaderHeight] = useState('');
 
     const updateHeaderHeight = () => {
         const header = document.querySelector('header');
@@ -21,6 +21,6 @@ export default function HeaderGutter() {
     }, [])
     
     return (
-        <div style={{ height: headerHeight }}></div>
+        <div style={{ height: headerHeight }} className=""></div>
     )
 }

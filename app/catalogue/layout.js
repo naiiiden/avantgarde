@@ -1,10 +1,12 @@
 import Header from "@/components/Header/Header";
+import HeaderGutter from "@/components/Header/HeaderGutter";
 
 export default function RootLayout({ children }) {
   return (
-    <div>
+    <>
         <Header className={"invert"}/>
+        <HeaderGutter/>
         {children}
-    </div>
+    </>
   );
 }
