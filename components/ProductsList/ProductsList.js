@@ -16,7 +16,9 @@ export default function ProductsList({ searchParams }) {
                         <li key={index} className={`transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                             <Link href={`product/${item.urlHandle}`} 
                                 onMouseEnter={() => setHoveredIndex(index)}
-                                onMouseLeave={() => setHoveredIndex(null)}>
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                onFocus={() => setHoveredIndex(index)}
+                                onBlur={() => setHoveredIndex(null)}>
                                 <Image className="" src={item.image} width={1500} height={1500} alt="" />
                                 <h2 className="top-0 p-1.5 text-sm">{item.name}</h2>
                             </Link>
@@ -41,7 +43,9 @@ export default function ProductsList({ searchParams }) {
                             <li key={index} className={`border-b border-black transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                                 <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.urlHandle}`}
                                     onMouseEnter={() => setHoveredIndex(index)}
-                                    onMouseLeave={() => setHoveredIndex(null)}>
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                    onFocus={() => setHoveredIndex(index)}
+                                    onBlur={() => setHoveredIndex(null)}>
                                     <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={item.image} width={1500} height={1500} alt="" />
                                     <div className="p-1.5 flex gap-2 md:gap-4 xl:gap-6 2xl:gap-8 flex-grow">
                                         <h2 className="w-3/5 sm:w-1/3 md:w-1/4 lg:w-1/5">{item.name}</h2>
