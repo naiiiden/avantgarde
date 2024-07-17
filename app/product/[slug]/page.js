@@ -16,7 +16,7 @@ export default function Page({ params }) {
         <>
             <Header className={"fixed invert"}/>
             <HeaderGutter/>
-            <main className="px-4 pb-4 flex flex-col gap-4 lg:flex-row">
+            <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row">
                 <Image className="lg:w-9/12 xl:w-4/5 2xl:w-5/6" src={currentProduct.image} width={3000} height={3000} alt=""/>
                 <div>
                     <div className="sticky top-[51.25px]">
