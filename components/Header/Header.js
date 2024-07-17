@@ -11,7 +11,7 @@ export default function Header({ className }) {
                 <ul className="text-end flex gap-4">
                     {data.links.map((link) => 
                         <li key={link.name}>
-                            <Link href={`/${link.url}`} className="block leading-none">
+                            <Link href={`/${link.url}`} className="leading-none">
                                 {link.name}
                             </Link>
                         </li>

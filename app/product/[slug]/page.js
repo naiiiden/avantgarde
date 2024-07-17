@@ -21,6 +21,7 @@ export default function Page({ params }) {
                 <div>
                     <div className="sticky top-[51.25px]">
                         <h1><span className="font-semibold">{currentProduct.name}</span> by {currentProduct.creator}</h1>
+                        <p><span className="font-semibold">Year:</span> {currentProduct.date}</p> 
                         <p><span className="font-semibold">Material(s):</span> {currentProduct.medium}</p>
                         <p><span className="font-semibold">Dimensions: </span>{currentProduct.dimensions}</p>
                         <p><span className="font-semibold">Price:</span> €{currentProduct.price}</p>
