@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
+import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
 
 import data from "@/public/chairs.json";
 
@@ -35,6 +37,11 @@ export default function ProductsList({ searchParams }) {
 
     return (
         <>
+            <div className="flex flex-wrap justify-between gap-4">
+                <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
+                <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
+                <CatalogueProductsViewForm currentView={searchParams.view}/>
+            </div>
             {searchParams.view === "grid" &&
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {data.map((item, index) =>
