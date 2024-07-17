@@ -4,31 +4,6 @@ import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/Ca
 import ProductsList from "@/components/ProductsList/ProductsList";
 
 export default function Page({ searchParams }) {
-    if (!searchParams.view) {
-        searchParams.view = 'grid';
-    }
-
-    if (!searchParams.sortBy) {
-        searchParams.sortBy = 'alphabeticalAtoZ';
-    }
-
-    switch (searchParams.sortBy) {
-        case "alphabeticalAtoZ":
-            data.sort((a, b) => a.name.localeCompare(b.name));
-            break;
-        case "alphabeticalZtoA":
-            data.sort((a, b) => b.name.localeCompare(a.name));
-            break;
-        case "priceAscending":
-            data.sort((a, b) => a.price - b.price);
-            break;
-        case "priceDescending":
-            data.sort((a, b) => b.price - a.price);
-            break;
-        default:
-            break;
-    }
-
     return (
         <main className="main-reveal px-4 pb-4 font-medium">
             <h1 className="sr-only">Catalogue</h1>

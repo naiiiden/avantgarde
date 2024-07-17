@@ -8,6 +8,31 @@ import data from "@/public/chairs.json";
 export default function ProductsList({ searchParams }) {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
+    if (!searchParams.view) {
+        searchParams.view = 'grid';
+    }
+
+    if (!searchParams.sortBy) {
+        searchParams.sortBy = 'alphabeticalAtoZ';
+    }
+
+    switch (searchParams.sortBy) {
+        case "alphabeticalAtoZ":
+            data.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case "alphabeticalZtoA":
+            data.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        case "priceAscending":
+            data.sort((a, b) => a.price - b.price);
+            break;
+        case "priceDescending":
+            data.sort((a, b) => b.price - a.price);
+            break;
+        default:
+            break;
+    }
+
     return (
         <>
             {searchParams.view === "grid" &&
