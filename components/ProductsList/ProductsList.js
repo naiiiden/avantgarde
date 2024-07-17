@@ -40,7 +40,7 @@ export default function ProductsList({ searchParams }) {
                     </div>
                     <ul className="grid">
                         {data.map((item, index) =>
-                            <li key={index} className={`border-b border-black transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
+                            <li key={index} className={`border-b last:border-b-0 border-black transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                                 <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.urlHandle}`}
                                     onMouseEnter={() => setHoveredIndex(index)}
                                     onMouseLeave={() => setHoveredIndex(null)}
