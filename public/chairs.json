@@ -17,7 +17,7 @@
         "creator": "Joris Laarman",
         "date": "2008/2008",
         "medium": "Cast marble resin and ground bone china",
-        "dimensions": "74 x 87.6 x 97.8 cm. (29⅛ x 34½ x 38½ in.)",
+        "dimensions": "74 x 87.6 x 97.8 cm. (29.1 x 34.5 x 38.5 in.)",
         "price": 20000,
         "quantity": 5
     },
@@ -28,7 +28,7 @@
         "creator": "Marc Newson",
         "date": "1988/1988",
         "medium": "Neoprene, aluminum, and chromed steel",
-        "dimensions": "80 x 84 x 80 cm. (31 1/2 x 33 7/16 x 31 1/2 in.)",
+        "dimensions": "80 x 84 x 80 cm. (31.5 x 33 x 31.5 in.)",
         "price": 18000,
         "quantity": 5
     },
@@ -39,7 +39,7 @@
         "creator": "Tomu Katayanagi",
         "date": "1987/1987",
         "medium": "glass",
-        "dimensions": "62.3 x 92.4 x 77.5 x 1.2 cm.",
+        "dimensions": "62.3 x 92.4 x 77.5 cm. (24.5 x 36.4 x 30.5 in.)",
         "price": 16000,
         "quantity": 5
     },
@@ -50,7 +50,7 @@
         "creator": "Mathias Bengtsson",
         "date": "1987/1987",
         "medium": "paper (fiber product), glue",
-        "dimensions": "74.9 × 88.9 × 74.9 cm. (29 1/2 × 35 × 29 1/2 in.)",
+        "dimensions": "74.9 x 88.9 x 74.9 cm. (29.5 x 35 x 29.5 in.)",
         "price": 14000,
         "quantity": 5
     },
@@ -61,7 +61,7 @@
         "creator": "Tokujin Yoshioka",
         "date": "2001",
         "medium": "paper",
-        "dimensions": "79.4 × 81.3 × 81.3 cm (31 × 32 × 32 in.)",
+        "dimensions": "79.4 x 81.3 x 81.3 cm. (31.3 x 32 x 32 in.)",
         "price": 12000,
         "quantity": 5
     },
@@ -72,7 +72,7 @@
         "creator": "Joris Laarman",
         "date": "2014",
         "medium": "resin",
-        "dimensions": "w60 x h80 x d65 cm (overall)",
+        "dimensions": "60 x 80 x 65 cm. (23.6 x 31.5 x 25.6 in.)",
         "price": 22000,
         "quantity": 5
     },
@@ -83,7 +83,7 @@
         "creator": "Joris Laarman",
         "date": "2014",
         "medium": "Magnesium alloy",
-        "dimensions": "w53.3 x h80 x d58.4 cm (overall)",
+        "dimensions": "53.3 x 80 x 58.4 cm. (21 x 31.5 x 23 in.)",
         "price": 24000,
         "quantity": 5
     },
@@ -94,7 +94,7 @@
         "creator": "nendo",
         "date": "2011/2011",
         "medium": "Polystyrene foam and carbon fiber",
-        "dimensions": "29 1/2 x 19 3/4 x 18 in.",
+        "dimensions": "74.9 x 50.2 x 45.7 cm. (29.5 x 19.8 x 18 in.)",
         "price": 19000,
         "quantity": 5
     },
@@ -105,7 +105,7 @@
         "creator": "Eeero Saarinen",
         "date": "1956",
         "medium": "Plastic reinforced with fiberglass, wool",
-        "dimensions": "32 x 25 1/2 x 23 in. (81.3 x 64.8 x 58.4 cm)",
+        "dimensions": "81.3 x 64.8 x 58.4 cm. (32 x 25.5 x 23 in.)",
         "price": 22000,
         "quantity": 5
     },
@@ -116,7 +116,7 @@
         "creator": "Danny Lane",
         "date": "1992",
         "medium": "sheet glass, gold, stainless steel, aluminium",
-        "dimensions": "Overall H: 88 cm, W: 47.1 cm, D: 65.5 cm",
+        "dimensions": "88 x 47.1 x 65.5 cm. (34.6 x 18.5 x 25.8 in.)",
         "price": 23000,
         "quantity": 5
     },
@@ -127,7 +127,7 @@
         "creator": "Verner Panton",
         "date": "1973/1976",
         "medium": "Molded plastic",
-        "dimensions": "32 5/8 in. × 19 in. × 21 3/4 in. (82.9 × 48.3 × 55.2 cm)",
+        "dimensions": "82.9 x 48.3 x 55.2 cm. (32.6 x 19 x 21.8 in.)",
         "price": 21000,
         "quantity": 5
     },
@@ -138,7 +138,7 @@
         "creator": "Verner Panton",
         "date": "1947/1948",
         "medium": "Chrome-plated steel, fiberglass, plastic, wood-particle shell, latex foam, original fabric upholstery",
-        "dimensions": "36 x 40 x 34 in. (91.4 x 101.6 x 86.4 cm)",
+        "dimensions": "91.4 x 101.6 x 86.4 cm. (36 x 40 x 34 in.)",
         "price": 25000,
         "quantity": 5
     },
@@ -149,7 +149,7 @@
         "creator": "Eeero Saarinen",
         "date": "1956",
         "medium": "Aluminium, fiberglass, plastic and fabric",
-        "dimensions": "80 x 49 x 55 cm",
+        "dimensions": "80 x 49 x 55 cm. (31.5 x 19.3 x 21.7 in.)",
         "price": 21000,
         "quantity": 5
     },
@@ -160,7 +160,7 @@
         "creator": "Eeero Saarinen",
         "date": "1956",
         "medium": "Aluminium, fiberglass, plastic and fabric",
-        "dimensions": "w66.04 x h81.92 x d60.96 cm",
+        "dimensions": "66.04 x 81.92 x 60.96 cm. (26 x 32.3 x 24 in.)",
         "price": 22000,
         "quantity": 5
     },
@@ -171,7 +171,7 @@
         "creator": "Alvar Aalto",
         "date": "1931/1932",
         "medium": "birchwood",
-        "dimensions": "65 cm x 82 cm x 60 cm",
+        "dimensions": "65 x 82 x 60 cm. (25.6 x 32.3 x 23.6 in.)",
         "price": 24000,
         "quantity": 5
     },
@@ -182,7 +182,7 @@
         "creator": "nendo",
         "date": "2008/2008",
         "medium": "Unwoven fabric",
-        "dimensions": "(roll): 36 x 20 (91.4 x 50.8 cm) (opened): 29 x 33 (73.7 x 83.8 cm)",
+        "dimensions": "73.7 x 83.8 cm. (29 x 33 in.)",
         "price": 23000,
         "quantity": 5
     },
@@ -193,7 +193,7 @@
         "creator": "Memphis Milano",
         "date": "1983",
         "medium": "Metal, wood, and paint",
-        "dimensions": "Overall: 35 1/2 x 25 1/2 x 17 1/2 in. (90.17 x 64.77 x 44.45 cm.)",
+        "dimensions": "90.2 x 64.8 x 44.5 cm. (35.5 x 25.5 x 17.5 in.)",
         "price": 20000,
         "quantity": 5
     },
@@ -204,7 +204,7 @@
         "creator": "Joe Colombo",
         "date": "1965",
         "medium": "Bent plywood, paint, gesso, rubber stoppers",
-        "dimensions": "23 1/8 x 27 7/8 x 25 1/8in. (58.7 x 70.8 x 63.8cm)",
+        "dimensions": "58.7 x 70.8 x 63.8 cm. (23.1 x 27.9 x 25.1 in.)",
         "price": 22000,
         "quantity": 5
     },
@@ -215,7 +215,7 @@
         "creator": "Oscar Niemeyer",
         "date": "1971",
         "medium": "Leather, Stainless Steel",
-        "dimensions": "29.53 in (75 cm) x 29.53 in (75 cm) x 45.28 in (115 cm)",
+        "dimensions": "75 x 75 x 115 cm. (29.5 x 29.5 x 45.3 in.)",
         "price": 25000,
         "quantity": 5
     },
@@ -226,7 +226,7 @@
         "creator": "Oscar Niemeyer",
         "date": "1971",
         "medium": "Die-cut corrugated cardboard and masonite",
-        "dimensions": "29 1/2 × 24 5/8 × 38 3/4 in. (74.93 × 62.55 × 98.43 cm)",
+        "dimensions": "74.9 x 62.6 x 98.4 cm. (29.5 x 24.6 x 38.8 in.)",
         "price": 24000,
         "quantity": 5
     },
@@ -237,7 +237,7 @@
         "creator": "Charles Rennie Mackintosh",
         "date": "1904/1904",
         "medium": "stained wood, glass, upholstery (replacement fabric)",
-        "dimensions": "47 × 24 1/4 × 25 in.",
+        "dimensions": "119.4 x 61.6 x 63.5 cm. (47 x 24.3 x 25 in.)",
         "price": 26000,
         "quantity": 5
     },
@@ -248,7 +248,7 @@
         "creator": "Ludwig Mies van der Rohe",
         "date": "1929",
         "medium": "chrome, steel (alloy), leather",
-        "dimensions": "72 x 72 x 77 cm 40 x 40 x 40 cm",
+        "dimensions": "72 x 72 x 77 cm. (28.3 x 28.3 x 30.3 in.)",
         "price": 28000,
         "quantity": 5
     },
@@ -259,7 +259,7 @@
         "creator": "Kem Weber",
         "date": "1934",
         "medium": "Birch, ash, and Naugahyde",
-        "dimensions": "30 × 32 × 25 in. (76.2 × 81.28 × 63.5 cm)",
+        "dimensions": "76.2 x 81.3 x 63.5 cm. (30 x 32 x 25 in.)",
         "price": 22000,
         "quantity": 5
     },
@@ -270,7 +270,7 @@
         "creator": "Vladimir Kagan",
         "date": "1953",
         "medium": "Wood and leather upholstery",
-        "dimensions": "w76.8 x h87 x d90.2 cm (overall)",
+        "dimensions": "76.8 x 87 x 90.2 cm. (30.2 x 34.3 x 35.5 in.)",
         "price": 25000,
         "quantity": 5
     },
@@ -281,7 +281,7 @@
         "creator": "Florence Schust Knoll",
         "date": "1955",
         "medium": "Chrome and fabric",
-        "dimensions": "77 x 64 x 77 cm",
+        "dimensions": "77 x 64 x 77 cm. (30.3 x 25.2 x 30.3 in.)",
         "price": 24000,
         "quantity": 5
     },
@@ -292,7 +292,7 @@
         "creator": "Emeco",
         "date": "2004",
         "medium": "Brushed and anodized aluminum",
-        "dimensions": "Overall: 31 3/4 x 16 1/2 x 20 1/2 in. (80.645 x 41.91 x 52.07 cm)",
+        "dimensions": "80.6 x 41.9 x 52.1 cm. (31.8 x 16.5 x 20.5 in.)",
         "price": 19000,
         "quantity": 5
     },
@@ -303,7 +303,7 @@
         "creator": "Ludwig Mies van der Rohe",
         "date": "1930",
         "medium": "Chrome and leather",
-        "dimensions": "79 x 59 x 57 cm",
+        "dimensions": "79 x 59 x 57 cm. (31.1 x 23.2 x 22.4 in.)",
         "price": 21000,
         "quantity": 5
     }
