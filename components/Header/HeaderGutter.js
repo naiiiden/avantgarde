@@ -14,8 +14,11 @@ export default function HeaderGutter() {
     useEffect(() => {
         updateHeaderHeight();
 
+        document.body.classList.add('header-gutter-rendered');
+
         window.addEventListener("resize", updateHeaderHeight);
         return () => {
+            document.body.classList.remove('header-gutter-rendered');
             window.removeEventListener('resize', updateHeaderHeight);
         }
     }, [])

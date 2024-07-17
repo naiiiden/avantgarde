@@ -1,6 +1,6 @@
 export default function Page() {
     return (
-        <main className="px-4 pb-4 max-w-5xl">
+        <main className="main-reveal px-4 pb-4 max-w-5xl">
             <h1 className="sr-only">About Avantgarde</h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 md:mb-4">Our story</h2>
             <div className="grid gap-2 md:gap-3 font-medium text-lg md:text-xl lg:text-2xl mb-20">

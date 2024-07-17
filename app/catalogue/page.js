@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import data from "@/public/chairs.json";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
 import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
@@ -32,7 +30,7 @@ export default function Page({ searchParams }) {
     }
 
     return (
-        <main className="px-4 pb-4 font-medium">
+        <main className="main-reveal px-4 pb-4 font-medium">
             <h1 className="sr-only">Catalogue</h1>
             <div className="flex flex-wrap justify-between gap-4">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
