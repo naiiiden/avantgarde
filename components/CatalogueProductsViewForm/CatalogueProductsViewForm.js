@@ -16,14 +16,14 @@ export default function CatalogueProductsViewForm({ currentView }) {
     return (
         <form className="pb-4 flex flex-wrap gap-x-2 justify-end">
             <p className="font-semibold">View:</p>
-            <label>
-                <input checked={currentView === "grid"} onChange={(e) => handleSort(e.target.id)} name="view" id="grid" className="peer opacity-0 absolute" type="radio"/>
-                <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline ">grid</span>
+            <label className="relative">
+                <input checked={currentView === "grid"} onChange={(e) => handleSort(e.target.id)} name="view" id="grid" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
+                <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline">grid</span>
                 <span aria-hidden="true">,</span>
             </label>
-            <label>
-                <input checked={currentView === "index"} onChange={(e) => handleSort(e.target.id)} name="view" id="index" className="peer opacity-0 absolute" type="radio"/>
-                <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline ">index</span>
+            <label className="relative">
+                <input checked={currentView === "index"} onChange={(e) => handleSort(e.target.id)} name="view" id="index" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
+                <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline">index</span>
             </label>
         </form>
     )
