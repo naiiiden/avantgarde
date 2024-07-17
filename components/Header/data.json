@@ -3,15 +3,15 @@
     "links": [
         {
             "name": "Catalogue",
-            "url": "catalogue"
+            "url": "/catalogue"
         },
         {
             "name": "Information",
-            "url": "information"
+            "url": "/information"
         },
         {
             "name": "Cart",
-            "url": ""
+            "url": "/cart"
         }
     ]
 }
