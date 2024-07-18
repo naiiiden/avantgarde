@@ -7,7 +7,7 @@ import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/Ca
 
 import data from "@/public/chairs.json";
 
-export default function ProductsList({ searchParams }) {
+export default function ProductsList({ searchParams, data }) {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     if (!searchParams.view) {
@@ -18,22 +18,22 @@ export default function ProductsList({ searchParams }) {
         searchParams.sortBy = 'alphabeticalAtoZ';
     }
 
-    switch (searchParams.sortBy) {
-        case "alphabeticalAtoZ":
-            data.sort((a, b) => a.name.localeCompare(b.name));
-            break;
-        case "alphabeticalZtoA":
-            data.sort((a, b) => b.name.localeCompare(a.name));
-            break;
-        case "priceAscending":
-            data.sort((a, b) => a.price - b.price);
-            break;
-        case "priceDescending":
-            data.sort((a, b) => b.price - a.price);
-            break;
-        default:
-            break;
-    }
+    // switch (searchParams.sortBy) {
+    //     case "alphabeticalAtoZ":
+    //         data.sort((a, b) => a.name.localeCompare(b.name));
+    //         break;
+    //     case "alphabeticalZtoA":
+    //         data.sort((a, b) => b.name.localeCompare(a.name));
+    //         break;
+    //     case "priceAscending":
+    //         data.sort((a, b) => a.price - b.price);
+    //         break;
+    //     case "priceDescending":
+    //         data.sort((a, b) => b.price - a.price);
+    //         break;
+    //     default:
+    //         break;
+    // }
 
     return (
         <>
@@ -46,13 +46,13 @@ export default function ProductsList({ searchParams }) {
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {data.map((item, index) =>
                         <li key={index} className={`transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
-                            <Link href={`product/${item.urlHandle}`} 
+                            <Link href={`product/${item.attributes.productUrlHandle}`} 
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onFocus={() => setHoveredIndex(index)}
                                 onBlur={() => setHoveredIndex(null)}>
-                                <Image className="" src={item.image} width={1500} height={1500} alt="" />
-                                <h2 className="top-0 p-1.5 text-sm">{item.name}</h2>
+                                <Image className="" src={`http://localhost:1337${item.attributes.productImage.data.attributes.url}`} width={1500} height={1500} alt="" />
+                                <h2 className="top-0 p-1.5 text-sm">{item.attributes.productName}</h2>
                             </Link>
                         </li>
                     )}
@@ -73,18 +73,18 @@ export default function ProductsList({ searchParams }) {
                     <ul className="grid">
                         {data.map((item, index) =>
                             <li key={index} className={`border-b last:border-b-0 border-black transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
-                                <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.urlHandle}`}
+                                <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.attributes.productUrlHandle}`}
                                     onMouseEnter={() => setHoveredIndex(index)}
                                     onMouseLeave={() => setHoveredIndex(null)}
                                     onFocus={() => setHoveredIndex(index)}
                                     onBlur={() => setHoveredIndex(null)}>
-                                    <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={item.image} width={1500} height={1500} alt="" />
+                                    <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.productImage.data.attributes.url}`} width={1500} height={1500} alt="" />
                                     <div className="p-1.5 flex gap-2 md:gap-4 xl:gap-6 2xl:gap-8 flex-grow">
-                                        <h2 className="w-3/5 sm:w-1/3 md:w-1/4 lg:w-1/5">{item.name}</h2>
-                                        <p className="hidden sm:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.creator}</p>
-                                        <p className="hidden md:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.medium}</p>
-                                        <p className="hidden lg:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.dimensions}</p>
-                                        <p className="w-2/5 text-end sm:w-1/3 md:w-1/4 lg:w-1/5">€{item.price}</p>
+                                        <h2 className="w-3/5 sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.productName}</h2>
+                                        <p className="hidden sm:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.productCreator}</p>
+                                        <p className="hidden md:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.productMedium}</p>
+                                        <p className="hidden lg:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.productDimensions}</p>
+                                        <p className="w-2/5 text-end sm:w-1/3 md:w-1/4 lg:w-1/5">€{item.attributes.productPrice}</p>
                                     </div>
                                 </Link>
                             </li>
