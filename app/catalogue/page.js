@@ -8,6 +8,9 @@ async function getData() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
         },
+        next: {
+            revalidate: 3600
+        }
     });
 
     if (!res.ok) {
@@ -21,7 +24,6 @@ export default async function Page({ searchParams }) {
     const data = await getData();
 
     console.log('fetched data: ', data.data);
-    console.log('product: ', data.data[0].attributes.productImage);
 
     return (
         <main className="main-reveal px-4 pb-4 font-medium">
