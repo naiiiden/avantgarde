@@ -5,8 +5,6 @@ import { useState } from "react";
 import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
 
-import data from "@/public/chairs.json";
-
 export default function ProductsList({ searchParams, data }) {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -18,22 +16,22 @@ export default function ProductsList({ searchParams, data }) {
         searchParams.sortBy = 'alphabeticalAtoZ';
     }
 
-    // switch (searchParams.sortBy) {
-    //     case "alphabeticalAtoZ":
-    //         data.sort((a, b) => a.name.localeCompare(b.name));
-    //         break;
-    //     case "alphabeticalZtoA":
-    //         data.sort((a, b) => b.name.localeCompare(a.name));
-    //         break;
-    //     case "priceAscending":
-    //         data.sort((a, b) => a.price - b.price);
-    //         break;
-    //     case "priceDescending":
-    //         data.sort((a, b) => b.price - a.price);
-    //         break;
-    //     default:
-    //         break;
-    // }
+    switch (searchParams.sortBy) {
+        case "alphabeticalAtoZ":
+            data.sort((a, b) => a.attributes.productName.localeCompare(b.attributes.productName));
+            break;
+        case "alphabeticalZtoA":
+            data.sort((a, b) => b.attributes.productName.localeCompare(a.attributes.productName));
+            break;
+        case "priceAscending":
+            data.sort((a, b) => a.attributes.productPrice - b.attributes.productPrice);
+            break;
+        case "priceDescending":
+            data.sort((a, b) => b.attributes.productPrice - a.attributes.productPrice);
+            break;
+        default:
+            break;
+    }
 
     return (
         <>

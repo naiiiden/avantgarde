@@ -1,9 +1,6 @@
 import 'dotenv/config';
 import ProductsList from "@/components/ProductsList/ProductsList";
 
-import Link from 'next/link';
-import Image from 'next/image';
-
 async function getData() {
     const res = await fetch('http://localhost:1337/api/products?populate=productImage', {
         method: 'GET',
