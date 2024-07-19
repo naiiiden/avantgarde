@@ -51,10 +51,10 @@ export default function HomeProductSlider() {
 
     return (
         <>
-            <swiper-container ref={sliderRef} class="grid w-full fixed z-10" loop>
+            <swiper-container ref={sliderRef} class="grid w-full fixed z-10" slides-per-view="1.9" centered-slides="true" loop>
                 {data.map((item, index) => 
-                    <swiper-slide class="mix-blend-difference flex items-center h-screen" key={index}>
-                        <Image className="max-w-[80%] lg:max-w-[60%] xl:max-w-[50%] 2xl:max-w-[30%] mx-auto" src={item.image} width={1500} height={1500} alt=""/>
+                    <swiper-slide class=" flex items-center h-screen" key={index}>
+                        <Image className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" src={item.image} width={1500} height={1500} alt=""/>
                     </swiper-slide>
                 )}
             </swiper-container>
