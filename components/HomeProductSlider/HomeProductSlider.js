@@ -54,7 +54,7 @@ export default function HomeProductSlider() {
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10" loop>
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index}>
-                        <Image className="max-w-[30%] mx-auto" src={item.image} width={1500} height={1500} alt=""/>
+                        <Image className="max-w-[80%] lg:max-w-[60%] xl:max-w-[50%] 2xl:max-w-[30%] mx-auto" src={item.image} width={1500} height={1500} alt=""/>
                     </swiper-slide>
                 )}
             </swiper-container>
