@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 export default function Home() {
   return (
     <>
-      <Header className={"invert fixed"}/>
+      <Header/>
       <main>
         <HomeProductSilder/>
       </main>

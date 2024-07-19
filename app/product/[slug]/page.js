@@ -32,7 +32,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-            <Header className={"fixed invert"}/>
+            <Header/>
             <HeaderGutter/>
             <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row">
                 {currentProduct && currentProduct.data.length > 0 ?

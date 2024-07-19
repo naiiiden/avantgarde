@@ -4,7 +4,7 @@ import HeaderGutter from "@/components/Header/HeaderGutter";
 export default function RootLayout({ children }) {
   return (
     <>
-        <Header className={"fixed invert"}/>
+        <Header/>
         <HeaderGutter/>
         {children}
     </>
