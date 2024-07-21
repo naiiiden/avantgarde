@@ -5,11 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function HomeProductSlider({ data }) {
+    console.log(data);
+
     const sliderRef = useRef(null);
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
-    const [productLinkHref, setProductLinkHref] = useState(data[0].productUrlHandle);
+    const [productLinkHref, setProductLinkHref] = useState(data[0].attributes.productUrlHandle);
 
     const updateCursorPosition = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -29,14 +31,14 @@ export default function HomeProductSlider({ data }) {
             swiper.slideToLoop(localStorageCurrentSlideIndex, 0);
             
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
-            setProductLinkHref(data[localStorageCurrentSlideIndex].productUrlHandle);
+            setProductLinkHref(data[localStorageCurrentSlideIndex].attributes.productUrlHandle);
         }
 
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
 
             setCurrentSlideIndex(newIndex);
-            setProductLinkHref(data[newIndex].productUrlHandle);
+            setProductLinkHref(data[newIndex].attributes.productUrlHandle);
 
             localStorage.setItem('swiperIndex', newIndex);
         };
