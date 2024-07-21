@@ -2,15 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import { register } from "swiper/element/bundle";
 import Link from "next/link";
-import data from "@/public/chairs.json";
 import Image from "next/image";
 
-export default function HomeProductSlider() {
+export default function HomeProductSlider({ data }) {
     const sliderRef = useRef(null);
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
-    const [productLinkHref, setProductLinkHref] = useState(data[0].urlHandle);
+    const [productLinkHref, setProductLinkHref] = useState(data[0].productUrlHandle);
 
     const updateCursorPosition = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -30,14 +29,14 @@ export default function HomeProductSlider() {
             swiper.slideToLoop(localStorageCurrentSlideIndex, 0);
             
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
-            setProductLinkHref(data[localStorageCurrentSlideIndex].urlHandle);
+            setProductLinkHref(data[localStorageCurrentSlideIndex].productUrlHandle);
         }
 
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
 
             setCurrentSlideIndex(newIndex);
-            setProductLinkHref(data[newIndex].urlHandle);
+            setProductLinkHref(data[newIndex].productUrlHandle);
 
             localStorage.setItem('swiperIndex', newIndex);
         };
@@ -47,14 +46,14 @@ export default function HomeProductSlider() {
         return () => {
             swiper.off('slideChange', handleSlideChange);
         };
-    }, []);
+    }, [data]);
 
     return (
         <>
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10" slides-per-view="1.9" centered-slides="true" loop>
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index}>
-                        <Image className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" src={item.image} width={1500} height={1500} alt=""/>
+                        <Image className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" src={`http://localhost:1337${item.attributes.productImage.data.attributes.url}`} width={1500} height={1500} alt=""/>
                     </swiper-slide>
                 )}
             </swiper-container>
