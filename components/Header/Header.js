@@ -29,7 +29,7 @@ export default async function Header({ className }) {
     return (
         <header className={`${className} fixed z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full`}>
             <HeaderLogo data={data.data}/>
-            <HeaderNav/>
+            <HeaderNav data={data.data}/>
         </header>
     )
 }
