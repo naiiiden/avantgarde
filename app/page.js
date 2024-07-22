@@ -2,7 +2,7 @@ import HomeProductSilder from "@/components/HomeProductSlider/HomeProductSlider"
 import Header from "@/components/Header/Header";
 
 async function getData() {
-  const res = await fetch('http://localhost:3333/api/products?populate=productImage&pagination[pageSize]=99', {
+  const res = await fetch('http://localhost:1337/api/products?populate=image&pagination[pageSize]=99', {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',

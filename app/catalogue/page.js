@@ -2,7 +2,7 @@ import 'dotenv/config';
 import ProductsList from "@/components/ProductsList/ProductsList";
 
 async function getData() {
-    const res = await fetch('http://localhost:3333/api/products?populate=productImage&pagination[pageSize]=99', {
+    const res = await fetch('http://localhost:1337/api/products?populate=image&pagination[pageSize]=99', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -22,8 +22,6 @@ async function getData() {
 
 export default async function Page({ searchParams }) {
     const data = await getData();
-
-    console.log('fetched data: ', data.data);
 
     return (
         <main className="main-reveal px-4 pb-4 font-medium">
