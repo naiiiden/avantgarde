@@ -55,7 +55,7 @@ export default function HomeProductSlider({ data }) {
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10" slides-per-view="1.9" centered-slides="true" loop>
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index}>
-                        <Image className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" src={`http://localhost:3333${item.attributes.image.data.attributes.url}`} width={1500} height={1500} alt=""/>
+                        <Image className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={1500} height={1500} alt=""/>
                     </swiper-slide>
                 )}
             </swiper-container>
