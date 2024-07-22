@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function HomeProductSlider({ data }) {
-    console.log(data);
-
     const sliderRef = useRef(null);
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
