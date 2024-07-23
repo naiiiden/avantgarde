@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "information_pages",
+  "info": {
+    "singularName": "information-page",
+    "pluralName": "information-pages",
+    "displayName": "InformationPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "InformationContent": {
+      "type": "richtext"
+    }
+  }
+}

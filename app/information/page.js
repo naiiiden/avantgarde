@@ -1,7 +1,30 @@
-export default function Page() {
+import ReactMarkdown from "react-markdown"
+
+async function getData() {
+    const res = await fetch('http://localhost:1337/api/information-page', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
+        },
+        next: {
+            revalidate: 60
+        }
+    });
+
+    if (!res.ok) {
+        throw new Error('failed to fetch data');
+    }
+
+    return res.json();
+}
+
+export default async function Page() {
+    const data = await getData();
+
     return (
         <main className="main-reveal px-4 pb-4 max-w-5xl">
-            <h1 className="sr-only">About Avantgarde</h1>
+            {/* <h1 className="sr-only">About Avantgarde</h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 md:mb-4">Our story</h2>
             <div className="grid gap-2 md:gap-3 font-medium text-lg md:text-xl lg:text-2xl mb-20">
                 <p>The origins of Avantgarde trace back to a serendipitous encounter in the vibrant streets of Copenhagen. In 2010, our founder, Alexander Jørgensen, a passionate architect with a keen eye for modern design, stumbled upon a small, quaint boutique showcasing a collection of avant-garde chairs from various designers. The elegance and diversity of the designs struck a chord with Alexander, igniting a vision for a new kind of furniture store.</p>
@@ -18,7 +41,10 @@ export default function Page() {
             <div className="grid gap-2 md:gap-3 font-medium text-lg md:text-xl lg:text-2xl mb-20">
                 <p>From the moment you step into our store or browse our online collection, you will be immersed in a world of contemporary elegance. Our team of design experts is dedicated to helping you find the perfect chair that complements your unique taste and lifestyle.</p>
                 <p>Whether you are looking for a statement piece to elevate your living room or a sleek, functional chair for your workspace, Avantgarde offers a diverse range of designs to suit every need. Our collections are constantly evolving, reflecting the latest trends and innovations in the world of furniture design.</p>
-            </div>
+            </div> */}
+            <ReactMarkdown>
+                {data.data.attributes['InformationContent']}
+            </ReactMarkdown>
         </main>
     )
 }

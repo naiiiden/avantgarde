@@ -819,6 +819,37 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiInformationPageInformationPage extends Schema.SingleType {
+  collectionName: 'information_pages';
+  info: {
+    singularName: 'information-page';
+    pluralName: 'information-pages';
+    displayName: 'InformationPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    InformationContent: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::information-page.information-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::information-page.information-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -876,6 +907,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::global.global': ApiGlobalGlobal;
+      'api::information-page.information-page': ApiInformationPageInformationPage;
       'api::product.product': ApiProductProduct;
     }
   }
