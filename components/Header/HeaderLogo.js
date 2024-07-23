@@ -1,10 +1,7 @@
 "use client";
 import Link from "next/link";
-import data from "./data.json";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
-import avantgarde from "@/public/avantgarde.svg";
 
 export default function HeaderLogo({ data }) {
     const [imageWidth, setImageWidth] = useState("100%");

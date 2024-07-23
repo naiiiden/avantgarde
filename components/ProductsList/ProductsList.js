@@ -50,7 +50,7 @@ export default function ProductsList({ searchParams, data }) {
                                 onFocus={() => setHoveredIndex(index)}
                                 onBlur={() => setHoveredIndex(null)}>
                                 <Image className="" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={1500} height={1500} alt="" />
-                                <h2 className="top-0 p-1.5 text-sm">{item.attributes.productName}</h2>
+                                <h2 className="top-0 p-1.5 text-sm">{item.attributes.name}</h2>
                             </Link>
                         </li>
                     )}
