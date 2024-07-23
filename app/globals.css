@@ -10,3 +10,56 @@
     opacity: 1;
     transition: 1s;
 }
+
+.information-rich-text h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.information-rich-text h2 {
+    margin-top: 5rem;
+    margin-bottom: 0.5rem; 
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    font-weight: 600; 
+
+    @media (min-width: 768px) { 
+        margin-bottom: 1rem; 
+        font-size: 1.875rem;
+        line-height: 2.25rem; 
+    }
+
+    @media (min-width: 1024px) { 
+        font-size: 2.25rem;
+        line-height: 2.5rem; 
+    }
+}
+
+.information-rich-text :nth-child(2) {
+    margin-top: 0;
+}
+
+.information-rich-text p {
+    font-size: 1.125rem;
+    line-height: 1.75rem; 
+    font-weight: 500; 
+    margin-bottom: .5rem;
+
+    @media (min-width: 768px) { 
+        font-size: 1.25rem;
+        line-height: 1.75rem; 
+        margin-bottom: .75rem;
+    }
+
+    @media (min-width: 1024px) { 
+        font-size: 1.5rem;
+        line-height: 2rem; 
+    }
+}
