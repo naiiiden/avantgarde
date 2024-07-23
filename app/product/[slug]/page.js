@@ -1,31 +1,13 @@
 import Header from "@/components/Header/Header";
 import HeaderGutter from "@/components/Header/HeaderGutter";
 import Image from "next/image";
-
-async function getData(slug) {
-    const res = await fetch(`http://localhost:1337/api/products?filters[urlHandle][$eq]=${slug}&populate=image`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
-        },
-        next: {
-            revalidate: 60
-        }
-    });
-
-    if (!res.ok) {
-        throw new Error('failed to fetch data');
-    }
-
-    return res.json();
-}
+import { getData } from "@/app/utilities/getData";
 
 export default async function Page({ params }) {
     let currentProduct;
 
     try {
-        currentProduct = await getData(params.slug);
+        currentProduct = await getData(`http://localhost:1337/api/products?filters[urlHandle][$eq]=${params.slug}&populate=image`);
     } catch (error) {
         console.error('Error fetching product:', error);
     }

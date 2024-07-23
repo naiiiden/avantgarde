@@ -1,26 +1,8 @@
 import ReactMarkdown from "react-markdown"
-
-async function getData() {
-    const res = await fetch('http://localhost:1337/api/information-page', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
-        },
-        next: {
-            revalidate: 60
-        }
-    });
-
-    if (!res.ok) {
-        throw new Error('failed to fetch data');
-    }
-
-    return res.json();
-}
+import { getData } from "../utilities/getData";
 
 export default async function Page() {
-    const data = await getData();
+    const data = await getData('http://localhost:1337/api/information-page');
 
     return (
         <main className="main-reveal px-4 pb-4 max-w-5xl">
