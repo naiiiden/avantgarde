@@ -10,7 +10,7 @@ async function getData(slug) {
             'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
         },
         next: {
-            revalidate: 3600
+            revalidate: 60
         }
     });
 
