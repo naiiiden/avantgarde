@@ -19,7 +19,7 @@ export default async function Page({ params }) {
             <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row">
                 {currentProduct && currentProduct.data.length > 0 ?
                     <>
-                        <Image className="lg:w-9/12 xl:w-4/5 2xl:w-5/6" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+                        <Image unoptimized className="lg:w-9/12 xl:w-4/5 2xl:w-5/6" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
                         <div>
                             <div className="sticky top-[51.25px]">
                                 <h1><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
