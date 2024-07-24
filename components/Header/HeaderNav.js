@@ -6,7 +6,7 @@ export default function HeaderNav({ data }) {
     const pathname = usePathname();
 
     return (
-        <nav className="ml-auto">
+        <nav className="ml-auto overflow-x-scroll">
             <ul className="text-end flex gap-4">
                 {data.attributes['Header'].links.map((link) => 
                     <li key={link.text}>
