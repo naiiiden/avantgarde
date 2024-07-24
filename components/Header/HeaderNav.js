@@ -10,7 +10,7 @@ export default function HeaderNav({ data }) {
             <ul className="text-end flex gap-4">
                 {data.attributes['Header'].links.map((link) => 
                     <li key={link.text}>
-                        <Link href={`/${link.url}`} className={`${pathname === link.url ? 'underline decoration-2 italic' : ''} leading-none`}>
+                        <Link href={`/${link.url}`} className={`${pathname === `/${link.url}` ? 'underline decoration-2 italic' : ''} leading-none`}>
                             {link.text}
                         </Link>
                     </li>
