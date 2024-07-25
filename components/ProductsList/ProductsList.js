@@ -9,7 +9,7 @@ export default function ProductsList({ searchParams, data }) {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     if (!searchParams.view) {
-        searchParams.view = 'grid';
+        searchParams.view = 'index';
     }
 
     if (!searchParams.sortBy) {
@@ -43,7 +43,7 @@ export default function ProductsList({ searchParams, data }) {
             {searchParams.view === "grid" &&
                 <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {data.map((item, index) =>
-                        <li key={index} className={`transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
+                        <li key={index} className={`transition-opacity duration-500 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                             <Link href={`product/${item.attributes.urlHandle}`} 
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
@@ -70,7 +70,7 @@ export default function ProductsList({ searchParams, data }) {
                     </div>
                     <ul className="grid">
                         {data.map((item, index) =>
-                            <li key={index} className={`border-b last:border-b-0 border-black transition-opacity duration-300 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
+                            <li key={index} className={`border-b last:border-b-0 border-black transition-opacity duration-500 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                                 <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.attributes.urlHandle}`}
                                     onMouseEnter={() => setHoveredIndex(index)}
                                     onMouseLeave={() => setHoveredIndex(null)}
