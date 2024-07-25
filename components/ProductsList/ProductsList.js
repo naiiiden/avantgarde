@@ -49,7 +49,7 @@ export default function ProductsList({ searchParams, data }) {
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onFocus={() => setHoveredIndex(index)}
                                 onBlur={() => setHoveredIndex(null)}>
-                                <Image src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt="" />
+                                <Image unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt="" />
                                 <h2 className="top-0 p-1.5 text-sm">{item.attributes.name}</h2>
                             </Link>
                         </li>
@@ -76,7 +76,7 @@ export default function ProductsList({ searchParams, data }) {
                                     onMouseLeave={() => setHoveredIndex(null)}
                                     onFocus={() => setHoveredIndex(index)}
                                     onBlur={() => setHoveredIndex(null)}>
-                                    <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
+                                    <Image unoptimized className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
                                     <div className="p-1.5 flex gap-2 md:gap-4 xl:gap-6 2xl:gap-8 flex-grow">
                                         <h2 className="w-3/5 sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.name}</h2>
                                         <p className="hidden sm:block sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.creator}</p>
