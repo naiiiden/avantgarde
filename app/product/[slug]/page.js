@@ -23,8 +23,8 @@ export default async function Page({ params }) {
             <HeaderGutter/>
             <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row">
                 <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[75%] xl:max-w-[80%] 2xl:max-w-[83.333333%]" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
-                <div>
-                    <div className="sticky top-[51.25px]">
+                <div className="flex-grow">
+                    <div className="sticky top-[51.25px] max-w-96 ml-auto lg:pl-1">
                         <h1><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
                         <p><span className="font-semibold">Year:</span> {currentProduct.data[0].attributes.date}</p> 
                         <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
