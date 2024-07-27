@@ -49,7 +49,7 @@ export default function HomeProductSlider({ data }) {
     }, [data]);
 
     return (
-        <>
+        <div onMouseMove={updateCursorPosition}>
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10" slides-per-view="1.9" centered-slides="true" loop slide-to-clicked-slide="true">
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index}>
@@ -57,11 +57,7 @@ export default function HomeProductSlider({ data }) {
                     </swiper-slide>
                 )}
             </swiper-container>
-            <div ref={controlsRef} className="hidden lg:block z-10 fixed inset-0 group" onMouseMove={updateCursorPosition}>
-                <button aria-label="Prev slide" className="cursor-none fixed w-1/2 left-0 top-0 h-full rotate-180" onClick={() => sliderRef.current.swiper.slidePrev()}></button>
-                <button aria-label="Next slide" className="cursor-none fixed w-1/2 right-0 top-0 h-full" onClick={() => sliderRef.current.swiper.slideNext()}></button>
-                <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-40">{currentSlideIndex + 1} / {data.length}</div>
-            </div>
+            <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute -z-10 font-semibold text-5xl tracking-tighter min-w-40">{currentSlideIndex + 1} / {data.length}</div>
             <div className="flex flex-col gap-4 fixed z-40 bottom-0 right-0 p-4">
                 <div className=" max-lg:w-full flex items-center justify-between">
                     <div className="font-semibold text-lg tracking-tighter text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
@@ -71,6 +67,6 @@ export default function HomeProductSlider({ data }) {
                 </div>
                 <h1 className="font-semibold text-xs lg:text-sm">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
             </div>
-        </>
+        </div>
     )
 }
