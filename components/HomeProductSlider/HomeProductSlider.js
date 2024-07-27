@@ -53,15 +53,17 @@ export default function HomeProductSlider({ data }) {
     }, [data]);
 
     return (
-        <div className="group" onMouseMove={updateCursorPosition}>
+        <div className="group cursor-none" onMouseMove={updateCursorPosition}>
             <swiper-container ref={sliderRef} class="grid w-full fixed z-10" slides-per-view="1.9" centered-slides="true" loop slide-to-clicked-slide="true">
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index}>
-                        <Image unoptimized className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
+                        <Link href={`product/${item.attributes.urlHandle}`} className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto">
+                            <Image unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
+                        </Link>
                     </swiper-slide>
                 )}
             </swiper-container>
-            <div style={{ ...cursorPosition }} className="hidden group-hover:block absolute pointer-events-none select-none z-10 font-semibold text-5xl tracking-tighter min-w-40">{currentSlideIndex + 1} / {data.length}</div>
+            <div style={{ ...cursorPosition }} className="hidden group-hover:block fixed pointer-events-none select-none z-10 font-semibold text-5xl tracking-tighter min-w-40">{currentSlideIndex + 1} / {data.length}</div>
             <div className="flex flex-col gap-4 fixed z-40 bottom-0 right-0 p-4">
                 <div className=" max-lg:w-full flex items-center justify-between">
                     <div className="font-semibold text-lg tracking-tighter text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
