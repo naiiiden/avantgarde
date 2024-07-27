@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-slide:not(.swiper-slide-active) a {
+    pointer-events: none;
+    user-select: none;
+}
+
 .main-reveal {
     opacity: 0;
 }
