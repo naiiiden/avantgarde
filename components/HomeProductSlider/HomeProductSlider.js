@@ -29,14 +29,18 @@ export default function HomeProductSlider({ data }) {
             swiper.slideToLoop(localStorageCurrentSlideIndex, 0);
             
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
-            setProductLinkHref(data[localStorageCurrentSlideIndex].attributes.urlHandle);
+            if (localStorageCurrentSlideIndex) {
+                setProductLinkHref(data[localStorageCurrentSlideIndex].attributes.urlHandle);
+            }
         }
 
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
 
             setCurrentSlideIndex(newIndex);
-            setProductLinkHref(data[newIndex].attributes.urlHandle);
+            if (localStorageCurrentSlideIndex) {
+                setProductLinkHref(data[newIndex].attributes.urlHandle);
+            }
 
             localStorage.setItem('swiperIndex', newIndex);
         };
