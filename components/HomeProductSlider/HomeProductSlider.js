@@ -9,7 +9,6 @@ export default function HomeProductSlider({ data }) {
     const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
-    const [productLinkHref, setProductLinkHref] = useState(data[0].attributes.urlHandle);
 
     const updateCursorPosition = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -27,21 +26,12 @@ export default function HomeProductSlider({ data }) {
 
         if (localStorageCurrentSlideIndex !== null) {
             swiper.slideToLoop(localStorageCurrentSlideIndex, 0);
-            
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
-            if (localStorageCurrentSlideIndex) {
-                setProductLinkHref(data[localStorageCurrentSlideIndex].attributes.urlHandle);
-            }
         }
 
         const handleSlideChange = () => {
             const newIndex = swiper.realIndex;
-
             setCurrentSlideIndex(newIndex);
-            if (localStorageCurrentSlideIndex) {
-                setProductLinkHref(data[newIndex].attributes.urlHandle);
-            }
-
             localStorage.setItem('swiperIndex', newIndex);
         };
 
