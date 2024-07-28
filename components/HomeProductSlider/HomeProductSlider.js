@@ -43,7 +43,7 @@ export default function HomeProductSlider({ data }) {
 
     return (
         <div className="group cursor-none fixed inset-0" onMouseMove={updateCursorPosition}>
-            <swiper-container ref={sliderRef} class="grid w-full z-10" slides-per-view="1.9" centered-slides="true" loop="true" loop-additional-slides="1" allow-touch-move="false">
+            <swiper-container ref={sliderRef} class="grid w-full z-10" slides-per-view="1.9" centered-slides="true" loop="true" loop-additional-slides="1" speed="600" breakpoints='{ "1024": { "allowTouchMove": false } }'>
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen " key={index} onClick={() => sliderRef.current?.swiper.slideToLoop(index)}>
                         <Link href={`product/${item.attributes.urlHandle}`} className="w-full h-full grid content-center">
