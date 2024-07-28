@@ -6,7 +6,6 @@ import Image from "next/image";
 
 export default function HomeProductSlider({ data }) {
     const sliderRef = useRef(null);
-    const controlsRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
 
@@ -44,9 +43,9 @@ export default function HomeProductSlider({ data }) {
 
     return (
         <div className="group cursor-none fixed inset-0" onMouseMove={updateCursorPosition}>
-            <swiper-container ref={sliderRef} class="grid w-full z-10" slides-per-view="1.9" centered-slides="true" loop="true" slide-to-clicked-slide="true" loop-additional-slides="1" allow-touch-move="false">
+            <swiper-container ref={sliderRef} class="grid w-full z-10" slides-per-view="1.9" centered-slides="true" loop="true" loop-additional-slides="1" allow-touch-move="false">
                 {data.map((item, index) => 
-                    <swiper-slide class="flex items-center h-screen swiper-slide" key={index}>
+                    <swiper-slide class="flex items-center h-screen " key={index} onClick={() => sliderRef.current?.swiper.slideToLoop(index)}>
                         <Link href={`product/${item.attributes.urlHandle}`} className="w-full h-full grid content-center">
                             <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
                         </Link>
