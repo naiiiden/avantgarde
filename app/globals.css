@@ -7,15 +7,6 @@ swiper-slide:not(.swiper-slide-active) a {
     user-select: none;
 }
 
-/* .main-reveal {
-    opacity: 0;
-} */
-
-.header-gutter-rendered .main-reveal {
-    opacity: 1;
-    transition: 1s;
-}
-
 .information-rich-text h1 {
     position: absolute;
     width: 1px;

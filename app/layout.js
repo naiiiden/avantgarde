@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import LenisLayout from "@/components/LenisLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} uppercase flex flex-col min-h-screen`}>
         <Header/>
-        {children}
+        <LenisLayout>
+          {children}
+        </LenisLayout>
       </body>
     </html>
   );
