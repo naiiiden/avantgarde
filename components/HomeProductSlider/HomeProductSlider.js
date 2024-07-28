@@ -48,10 +48,10 @@ export default function HomeProductSlider({ data }) {
                 {data.map((item, index) => 
                     <swiper-slide class="flex items-center h-screen" key={index} onClick={() => sliderRef.current?.swiper.slideToLoop(index)}>
                         <Link 
-                            onMouseEnter={() => (setHoverOnProductLink(true), console.log("is it true: ", hoverOnProductLink))} 
-                            onMouseLeave={() => (setHoverOnProductLink(false), console.log("is it true: ", hoverOnProductLink))} 
+                            onMouseEnter={() => setHoverOnProductLink(true)} 
+                            onMouseLeave={() => setHoverOnProductLink(false)} 
                             href={`product/${item.attributes.urlHandle}`} 
-                            className="w-full h-full grid content-center"
+                            className="w-full h-full grid content-center cursor-none"
                         >
                             <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
                         </Link>
@@ -60,7 +60,7 @@ export default function HomeProductSlider({ data }) {
             </swiper-container>
             <div style={{ ...cursorPosition }} className="hidden lg:group-hover:block fixed pointer-events-none select-none z-10 font-semibold text-5xl tracking-tighter min-w-40">
                 {hoverOnProductLink === true ? 
-                    <span>View product</span>
+                    <span className="-ml-28">View product</span>
                     :
                     <span>{currentSlideIndex + 1} / {data.length}</span>
                 }
