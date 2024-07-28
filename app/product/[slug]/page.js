@@ -17,7 +17,7 @@ export default async function Page({ params }) {
 
     return (
         <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row lg:pl-0 lg:pb-0 mt-auto">
-            <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[75%] xl:max-w-[80%] 2xl:max-w-[83.333333%]" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+            <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[50%] 2xl:max-w-6xl" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
             <div className="flex-grow mt-auto lg:sticky lg:bottom-4">
                 <div className="max-w-96 ml-auto lg:pl-1">
                     <h1><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
