@@ -8,6 +8,7 @@ export default function HomeProductSlider({ data }) {
     const sliderRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
+    const [hoverOnProductLink, setHoverOnProductLink] = useState(false);
 
     const updateCursorPosition = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -45,14 +46,25 @@ export default function HomeProductSlider({ data }) {
         <div className="group cursor-none fixed inset-0" onMouseMove={updateCursorPosition}>
             <swiper-container ref={sliderRef} class="grid w-full z-10" slides-per-view="1.9" centered-slides="true" loop="true" loop-additional-slides="1" speed="600" breakpoints='{ "1024": { "allowTouchMove": false } }'>
                 {data.map((item, index) => 
-                    <swiper-slide class="flex items-center h-screen " key={index} onClick={() => sliderRef.current?.swiper.slideToLoop(index)}>
-                        <Link href={`product/${item.attributes.urlHandle}`} className="w-full h-full grid content-center">
+                    <swiper-slide class="flex items-center h-screen" key={index} onClick={() => sliderRef.current?.swiper.slideToLoop(index)}>
+                        <Link 
+                            onMouseEnter={() => (setHoverOnProductLink(true), console.log("is it true: ", hoverOnProductLink))} 
+                            onMouseLeave={() => (setHoverOnProductLink(false), console.log("is it true: ", hoverOnProductLink))} 
+                            href={`product/${item.attributes.urlHandle}`} 
+                            className="w-full h-full grid content-center"
+                        >
                             <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
                         </Link>
                     </swiper-slide>
                 )}
             </swiper-container>
-            <div style={{ ...cursorPosition }} className="hidden lg:group-hover:block fixed pointer-events-none select-none z-10 font-semibold text-5xl tracking-tighter min-w-40">{currentSlideIndex + 1} / {data.length}</div>
+            <div style={{ ...cursorPosition }} className="hidden lg:group-hover:block fixed pointer-events-none select-none z-10 font-semibold text-5xl tracking-tighter min-w-40">
+                {hoverOnProductLink === true ? 
+                    <span>View product</span>
+                    :
+                    <span>{currentSlideIndex + 1} / {data.length}</span>
+                }
+            </div>
             <div className="flex flex-col gap-4 fixed z-40 bottom-0 right-0 p-4">
                 <div className="font-semibold text-lg tracking-tighter text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
                 <h1 className="font-semibold text-xs lg:text-sm">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
