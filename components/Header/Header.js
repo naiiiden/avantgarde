@@ -1,32 +1,16 @@
-import HeaderLogo from "./HeaderLogo";
+import Link from "next/link";
+import Image from "next/image";
 import HeaderNav from "./HeaderNav";
+import { getData } from "@/app/utilities/getData";
 
-async function getData() {
-    const res = await fetch('http://localhost:1337/api/global?populate[Header][populate]=*', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.STRAPI_API_KEY}`,
-        },
-        next: {
-            revalidate: 60
-        }
-    });
-
-    if (!res.ok) {
-        throw new Error('failed to fetch data');
-    }
-
-    return res.json();
-}
-
-
-export default async function Header({ className }) {
-    const data = await getData();
+export default async function Header() {
+    const data = await getData('http://localhost:1337/api/global?populate[Header][populate]=*');
 
     return (
-        <header className={`${className} sticky z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full`}>
-            <HeaderLogo data={data.data}/>
+        <header className={`sticky z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full`}>
+            <Link href="/" className={`w-full min-w-40 transition-all duration-300`}>
+                <Image className="w-full" priority src={`http://localhost:1337${data.data.attributes['Header']['Image'].data.attributes.url}`} width={1} height={1} alt={data.data.attributes['Header']['Image'].data.attributes.alternativeText}/>
+            </Link>
             <HeaderNav data={data.data}/>
         </header>
     )
