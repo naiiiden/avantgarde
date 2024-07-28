@@ -1,5 +1,4 @@
 import Header from "@/components/Header/Header";
-import HeaderGutter from "@/components/Header/HeaderGutter";
 import Image from "next/image";
 import { getData } from "@/app/utilities/getData";
 import { notFound } from "next/navigation";
@@ -20,8 +19,7 @@ export default async function Page({ params }) {
     return (
         <>
             <Header/>
-            {/* <HeaderGutter/> */}
-            <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row lg:pl-0 lg:pb-0">
+            <main className="main-reveal px-4 pb-4 flex flex-col gap-4 lg:flex-row lg:pl-0 lg:pb-0 mt-auto">
                 <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[75%] xl:max-w-[80%] 2xl:max-w-[83.333333%]" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
                 <div className="flex-grow mt-auto lg:sticky lg:bottom-4">
                     <div className="max-w-96 ml-auto lg:pl-1">
