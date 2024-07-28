@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
   return (
     <>
         <Header/>
-        <HeaderGutter/>
+        {/* <HeaderGutter/> */}
         {children}
     </>
   );

@@ -25,7 +25,7 @@ export default async function Header({ className }) {
     const data = await getData();
 
     return (
-        <header className={`${className} fixed z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full`}>
+        <header className={`${className} sticky z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full`}>
             <HeaderLogo data={data.data}/>
             <HeaderNav data={data.data}/>
         </header>

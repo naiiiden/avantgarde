@@ -7,9 +7,9 @@
     user-select: none;
 }
 
-.main-reveal {
+/* .main-reveal {
     opacity: 0;
-}
+} */
 
 .header-gutter-rendered .main-reveal {
     opacity: 1;

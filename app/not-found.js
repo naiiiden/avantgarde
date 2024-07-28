@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
     <Header/>
-    <HeaderGutter/>
+    {/* <HeaderGutter/> */}
       <main className="main-reveal">
         <div className="text-center w-full">
             <h1 className="font-semibold text-2xl">Page Not Found</h1>
