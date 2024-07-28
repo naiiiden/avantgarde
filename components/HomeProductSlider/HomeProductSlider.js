@@ -24,7 +24,7 @@ export default function HomeProductSlider({ data }) {
         const swiper = sliderRef.current.swiper;
         const localStorageCurrentSlideIndex = parseInt(localStorage.getItem('swiperIndex'));
 
-        if (localStorageCurrentSlideIndex !== null) {
+        if (!isNaN(localStorageCurrentSlideIndex)) {
             swiper.slideToLoop(localStorageCurrentSlideIndex, 0);
             setCurrentSlideIndex(localStorageCurrentSlideIndex);
         }
