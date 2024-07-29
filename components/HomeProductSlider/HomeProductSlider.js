@@ -67,7 +67,6 @@ export default function HomeProductSlider({ data }) {
             </div>
             <div className="flex flex-col gap-4 fixed z-40 bottom-0 right-0 p-4">
                 <div className="font-semibold text-lg tracking-tighter text-end lg:hidden">{currentSlideIndex + 1} / {data.length}</div>
-                <h1 className="font-semibold text-xs lg:text-sm">An exquisite collection of contemporary furniture designs. All images rights belong to Google’s Arts and Culture and their respective owners.</h1>
             </div>
         </div>
     )

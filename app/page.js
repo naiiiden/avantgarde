@@ -6,6 +6,7 @@ export default async function Home() {
 
   return (
     <main>
+      <h1 className="sr-only">An exquisite collection of contemporary furniture designs.</h1>
       <HomeProductSilder data={data.data}/>
     </main>
   )
