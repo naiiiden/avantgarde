@@ -53,7 +53,7 @@ export default function HomeProductSlider({ data }) {
                             href={`product/${item.attributes.urlHandle}`} 
                             className="w-full h-full grid content-center cursor-none"
                         >
-                            <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
+                            <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt={item.attributes.name}/>
                         </Link>
                     </swiper-slide>
                 )}
