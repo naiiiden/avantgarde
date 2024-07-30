@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+    opacity: 0;
+    animation: reveal 1s forwards;
+}
+
+@keyframes reveal {
+    100% {
+        opacity: 1;
+    }
+}
+
 swiper-slide:not(.swiper-slide-active) a {
     pointer-events: none;
     user-select: none;
