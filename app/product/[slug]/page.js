@@ -2,6 +2,26 @@ import Image from "next/image";
 import { getData } from "@/app/utilities/getData";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+    let currentProduct;
+
+    try {
+        currentProduct = await getData(`http://localhost:1337/api/products?filters[urlHandle][$eq]=${params.slug}&populate=image`);
+    } catch (error) {
+        console.error('Error fetching product:', error);
+    }
+
+    if (!currentProduct || currentProduct.data.length === 0) {
+        return {
+            title: 'Product Not Found | Avantgarde',
+        };
+    }
+
+    return {
+        title: `${currentProduct.data[0].attributes.name} by ${currentProduct.data[0].attributes.creator} | Avantgarde`,
+    };
+}
+
 export default async function Page({ params }) {
     let currentProduct;
 
