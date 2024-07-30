@@ -1,20 +1,14 @@
 "use client";
-import { motion, useIsPresent } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Template({ children }) {
-    const isPresent = useIsPresent();
-
-    return (
-        <>
-            <motion.div
-                className="fixed inset-0 z-50 bg-black"
-                initial={{ scaleX: 1 }}
-                animate={{ scaleX: 0, transition: { duration: 1.5, ease: "circOut" } }}
-                exit={{ scaleX: 1, transition: { duration: 1.5, ease: "circIn" } }}
-                style={{ originX: isPresent ? 0 : 1 }}
-            >
-            </motion.div>
-            {children}
-        </>
-    );
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+    >
+      {children}
+    </motion.div>
+  );
 }
