@@ -9,8 +9,8 @@ export default function Template({ children }) {
             <motion.div
                 className="fixed inset-0 z-50 bg-black"
                 initial={{ scaleX: 1 }}
-                animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-                exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
+                animate={{ scaleX: 0, transition: { duration: 1.5, ease: "circOut" } }}
+                exit={{ scaleX: 1, transition: { duration: 1.5, ease: "circIn" } }}
                 style={{ originX: isPresent ? 0 : 1 }}
             >
             </motion.div>
