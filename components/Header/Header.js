@@ -8,7 +8,7 @@ export default async function Header() {
 
     return (
         <header className={`sticky z-20 top-0 p-4 font-semibold flex flex-wrap justify-between gap-3 w-full uppercase`}>
-            <Link href="/" className={`w-full min-w-40 transition-all duration-300`}>
+            <Link href="/" className={`w-full min-w-40 transition-all duration-300 hover:opacity-85`}>
                 <Image className="w-full" priority src={`http://localhost:1337${data.data.attributes['Header']['Image'].data.attributes.url}`} width={1} height={1} alt={data.data.attributes['Header']['Image'].data.attributes.alternativeText}/>
             </Link>
             <HeaderNav data={data.data}/>
