@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} uppercase flex flex-col min-h-screen bg-slate-200`}>
+      <body className={`${inter.className} flex flex-col min-h-screen bg-slate-200`}>
         <Header/>
           <LenisLayout>
             {children}
