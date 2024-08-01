@@ -5,8 +5,8 @@ export const metadata = {
 
 export default function Page({ params }) {
     return (
-        <main>
-            <h1>cart</h1>
+        <main className="px-4 pb-4 font-medium">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">Cart</h1>
         </main>
     )
 }
