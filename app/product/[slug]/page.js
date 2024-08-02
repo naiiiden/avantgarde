@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getData } from "@/app/utilities/getData";
 import { notFound } from "next/navigation";
+import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 
 export async function generateMetadata({ params }) {
     let currentProduct;
@@ -45,7 +46,7 @@ export default async function Page({ params }) {
                     <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
                     <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
                     <p><span className="font-semibold">Price:</span> €{currentProduct.data[0].attributes.price}</p>
-                    <button className="mt-4 font-semibold bg-black text-white w-full p-2 uppercase">Add to cart</button>
+                    <AddToCartButton/>
                 </div>
             </div>
         </main>
