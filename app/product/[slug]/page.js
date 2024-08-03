@@ -46,7 +46,7 @@ export default async function Page({ params }) {
                     <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
                     <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
                     <p><span className="font-semibold">Price:</span> €{currentProduct.data[0].attributes.price}</p>
-                    <AddToCartButton/>
+                    <AddToCartButton productToAdd={currentProduct.data[0]}/>
                 </div>
             </div>
         </main>
