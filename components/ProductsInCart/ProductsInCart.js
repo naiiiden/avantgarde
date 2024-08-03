@@ -2,12 +2,16 @@
 import { CartContext } from "@/app/context/CartContext";
 import { useContext, useState } from "react";
 
-export default function AddToCartButton({ productToAdd }) {
+export default function ProductsInCart({  }) {
     const { cart, addToCart } = useContext(CartContext);
 
     console.log(1, cart);
 
     return (
-        <button onClick={() => addToCart(productToAdd)} className="mt-4 font-semibold bg-black text-white w-full p-2 uppercase">Add to cart</button>
-    ) 
+        <ul>
+            {cart.map((item, index) => 
+                <li key={index}>{item.attributes.name}</li>
+            )}            
+        </ul>
+    )
 }
