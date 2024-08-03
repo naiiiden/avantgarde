@@ -8,23 +8,29 @@ export default function ProductsInCart({  }) {
     console.log(1, cart);
 
     return (
-        <ul>
-            {cart.map((item, index) => 
-                <li key={index}>
-                    <span>{item.attributes.name}</span>
-                    <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
-                    <input
-                        type="number"
-                        value={item.quantity}
-                        onChange={(e) => {
-                            if (e.target.value > 0) {
-                                changeItemQuantity(item.id, parseInt(e.target.value))
-                            }
-                        }}
-                        min="1"
-                    />
-                </li>
-            )}            
-        </ul>
+        <>
+            {cart.length === 0 ? 
+                <p>cart is empty</p>
+                :
+                <ul>
+                    {cart.map((item, index) => 
+                        <li key={index}>
+                            <span>{item.attributes.name}</span>
+                            <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
+                            <input
+                                type="number"
+                                value={item.quantity}
+                                onChange={(e) => {
+                                    if (e.target.value > 0) {
+                                        changeItemQuantity(item.id, parseInt(e.target.value))
+                                    }
+                                }}
+                                min="1"
+                            />
+                        </li>
+                    )}            
+                </ul>
+            }
+        </>
     )
 }
