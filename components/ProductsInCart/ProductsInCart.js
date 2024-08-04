@@ -1,5 +1,6 @@
 "use client";
 import { CartContext } from "@/app/context/CartContext";
+import Link from "next/link";
 import { useContext, useState } from "react";
 
 export default function ProductsInCart({  }) {
@@ -10,7 +11,10 @@ export default function ProductsInCart({  }) {
     return (
         <>
             {cart.length === 0 ? 
-                <p>cart is empty</p>
+                <div className="text-center">
+                    <p className="border-b border-black pb-1 mb-1 text-2xl font-semibold lg:border-0">Your cart is empty</p>
+                    <Link href="/catalogue">View Catalogue</Link>
+                </div>
                 :
                 <ul>
                     {cart.map((item, index) => 
