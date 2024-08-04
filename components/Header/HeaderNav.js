@@ -14,7 +14,7 @@ export default function HeaderNav({ data }) {
                 {data.attributes['Header'].links.map((link) => 
                     <li key={link.text}>
                         <Link href={`/${link.url}`} className={`${pathname === `/${link.url}` ? 'underline italic' : 'hover:underline'} decoration-2 leading-none`}>
-                            {link.text} {link.text.toLowerCase() === "cart" && `(${cart.length})`}
+                            {link.text} {link.text.toLowerCase() === "cart" && <span className="before:content-['('] after:content-[')'] inline-flex">{cart.length}</span>}
                         </Link>
                     </li>
                 )}
