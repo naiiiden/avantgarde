@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Page({ params }) {
     return (
-        <main className="px-4 pb-4 font-medium">
+        <main className="px-4 pb-4 font-medium max-w-5xl ml-auto">
             <h1 className="sr-only">Cart</h1>
             <ProductsInCart/>
         </main>
