@@ -1,7 +1,8 @@
 "use client";
 import { CartContext } from "@/app/context/CartContext";
+import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function ProductsInCart({  }) {
     const { cart, changeItemQuantity, removeItemFromCart } = useContext(CartContext);
@@ -17,11 +18,15 @@ export default function ProductsInCart({  }) {
                 </div>
                 :
                 <ul>
-                    {cart.map((item, index) => 
+                    {cart.map((item, index) =>                    
                         <li key={index}>
+                            <Image src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={150} height={150} alt=""/>
                             <span>{item.attributes.name}</span>
                             <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
+                            <label htmlFor="quantity">Qty:</label>
                             <input
+                                id="quantity"
+                                name="quantity"
                                 type="number"
                                 value={item.quantity}
                                 onChange={(e) => {

@@ -1,6 +1,6 @@
 "use client";
 import { CartContext } from "@/app/context/CartContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function AddToCartButton({ productToAdd }) {
     const { cart, addToCart } = useContext(CartContext);
