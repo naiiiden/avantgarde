@@ -19,28 +19,30 @@ export default function ProductsInCart({  }) {
                 :
                 <ul>
                     {cart.map((item, index) =>                    
-                        <li className="flex gap-4" key={index}>
+                        <li className="flex gap-4 border-b last:border-b-0 border-black py-2" key={index}>
                             <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt=""/>
-                            <div className="w-full">
-                                <div className="">
-                                    <span>{item.attributes.name}</span>
+                            <div className="w-full flex flex-col">
+                                <span>{item.attributes.name}</span>
+                                <label className="uppercase mt-2 mb-4" htmlFor={`quantity-product-${index}`}>
+                                    Qty:
+                                    <input
+                                        className="w-10"
+                                        id={`quantity-product-${index}`}
+                                        name={`quantity-product-${index}`}
+                                        type="number"
+                                        value={item.quantity}
+                                        onChange={(e) => {
+                                            if (e.target.value > 0) {
+                                                changeItemQuantity(item.id, parseInt(e.target.value))
+                                            }
+                                        }}
+                                        min="1"
+                                    />
+                                </label>
+                                <div className="mt-auto flex justify-between">
                                     <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                                    <p>€{item.attributes.price}</p>
                                 </div>
-                                <label className="uppercase" htmlFor={`quantity-product-${index}`}>Qty:</label>
-                                <input
-                                    className="w-10"
-                                    id={`quantity-product-${index}`}
-                                    name={`quantity-product-${index}`}
-                                    type="number"
-                                    value={item.quantity}
-                                    onChange={(e) => {
-                                        if (e.target.value > 0) {
-                                            changeItemQuantity(item.id, parseInt(e.target.value))
-                                        }
-                                    }}
-                                    min="1"
-                                />
-                                <p>€{item.attributes.price}</p>
                             </div>
                         </li>
                     )}            
