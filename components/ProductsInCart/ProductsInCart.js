@@ -21,21 +21,23 @@ export default function ProductsInCart({  }) {
                     {cart.map((item, index) =>                    
                         <li key={index}>
                             <Image src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={150} height={150} alt=""/>
-                            <span>{item.attributes.name}</span>
-                            <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
-                            <label htmlFor="quantity">Qty:</label>
-                            <input
-                                id="quantity"
-                                name="quantity"
-                                type="number"
-                                value={item.quantity}
-                                onChange={(e) => {
-                                    if (e.target.value > 0) {
-                                        changeItemQuantity(item.id, parseInt(e.target.value))
-                                    }
-                                }}
-                                min="1"
-                            />
+                            <div>
+                                <span>{item.attributes.name}</span>
+                                <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
+                                <label htmlFor={`quantity-product-${index}`}>Qty:</label>
+                                <input
+                                    id={`quantity-product-${index}`}
+                                    name={`quantity-product-${index}`}
+                                    type="number"
+                                    value={item.quantity}
+                                    onChange={(e) => {
+                                        if (e.target.value > 0) {
+                                            changeItemQuantity(item.id, parseInt(e.target.value))
+                                        }
+                                    }}
+                                    min="1"
+                                />
+                            </div>
                         </li>
                     )}            
                 </ul>
