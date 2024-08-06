@@ -19,13 +19,16 @@ export default function ProductsInCart({  }) {
                 :
                 <ul>
                     {cart.map((item, index) =>                    
-                        <li key={index}>
-                            <Image src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={150} height={150} alt=""/>
-                            <div>
-                                <span>{item.attributes.name}</span>
-                                <button onClick={() => removeItemFromCart(item.id)}>delete item</button>
-                                <label htmlFor={`quantity-product-${index}`}>Qty:</label>
+                        <li className="flex gap-4" key={index}>
+                            <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt=""/>
+                            <div className="w-full">
+                                <div className="">
+                                    <span>{item.attributes.name}</span>
+                                    <button onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                                </div>
+                                <label className="uppercase" htmlFor={`quantity-product-${index}`}>Qty:</label>
                                 <input
+                                    className="w-10"
                                     id={`quantity-product-${index}`}
                                     name={`quantity-product-${index}`}
                                     type="number"
@@ -37,6 +40,7 @@ export default function ProductsInCart({  }) {
                                     }}
                                     min="1"
                                 />
+                                <p>€{item.attributes.price}</p>
                             </div>
                         </li>
                     )}            
