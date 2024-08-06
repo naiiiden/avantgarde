@@ -22,7 +22,7 @@ export default function ProductsInCart({  }) {
                         <li className="flex gap-4 border-b last:border-b-0 border-black py-2" key={index}>
                             <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt=""/>
                             <div className="w-full flex flex-col">
-                                <span>{item.attributes.name}</span>
+                                <Link href={`product/${item.attributes.urlHandle}`}>{item.attributes.name}</Link>
                                 <label className="uppercase mt-2 mb-4" htmlFor={`quantity-product-${index}`}>
                                     Qty:
                                     <input
