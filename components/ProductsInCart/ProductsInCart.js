@@ -20,7 +20,9 @@ export default function ProductsInCart({  }) {
                 <ul>
                     {cart.map((item, index) =>                    
                         <li className="flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
-                            <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt=""/>
+                            <Link href={`product/${item.attributes.urlHandle}`}>
+                                <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt={item.attributes.name}/>
+                            </Link>
                             <div className="w-full flex flex-col">
                                 <Link className="font-medium" href={`product/${item.attributes.urlHandle}`}>{item.attributes.name}</Link>
                                 <label className="text-sm uppercase mt-2 mb-4 flex" htmlFor={`quantity-product-${index}`}>
