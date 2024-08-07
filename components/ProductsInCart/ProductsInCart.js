@@ -18,9 +18,9 @@ export default function ProductsInCart({  }) {
                 </div>
                 :
                 <>
-                    <ul>
+                    <ul className="lg:w-4/5 ml-auto">
                         {cart.map((item, index) =>                    
-                            <li className="flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
+                            <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
                                 <Link href={`product/${item.attributes.urlHandle}`}>
                                     <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt={item.attributes.name}/>
                                 </Link>
@@ -50,7 +50,7 @@ export default function ProductsInCart({  }) {
                             </li>
                         )}            
                     </ul>
-                    <Link className="sticky bottom-4 font-semibold bg-black text-center text-white w-full block p-4 mt-2 uppercase" href="">Checkout</Link>
+                    <Link className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full block p-4 mt-2 uppercase" href="">Checkout</Link>
                 </>
             }
         </>
