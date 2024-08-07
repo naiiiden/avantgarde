@@ -43,7 +43,7 @@ export default function ProductsInCart({  }) {
                                         />
                                     </label>
                                     <div className="mt-auto flex justify-between">
-                                        <button className="uppercase text-xs" onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                                        <button className="uppercase text-xs opacity-65 hover:opacity-100" onClick={() => removeItemFromCart(item.id)}>Remove</button>
                                         <p>€{item.attributes.price}</p>
                                     </div>
                                 </div>
