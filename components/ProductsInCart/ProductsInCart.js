@@ -4,10 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 
-export default function ProductsInCart({  }) {
+export default function ProductsInCart() {
     const { cart, changeItemQuantity, removeItemFromCart } = useContext(CartContext);
 
     console.log(1, cart);
+
+    let totalCost = 0;
+    cart.forEach(item => {
+        totalCost += item.attributes.price * item.quantity;
+    });
 
     return (
         <>
@@ -43,7 +48,7 @@ export default function ProductsInCart({  }) {
                                         />
                                     </label>
                                     <div className="mt-auto flex justify-between">
-                                        <button className="uppercase text-xs opacity-65 hover:opacity-100" onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                                        <button className="underline uppercase text-xs opacity-65 hover:opacity-100" onClick={() => removeItemFromCart(item.id)}>Remove</button>
                                         <p>€{item.attributes.price}</p>
                                     </div>
                                 </div>
@@ -51,7 +56,7 @@ export default function ProductsInCart({  }) {
                         )}            
                     </ul>
                     <form>
-                        <button type="submit" role="link" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full block p-4 mt-2 uppercase" href="">Checkout</button>
+                        <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
             }
