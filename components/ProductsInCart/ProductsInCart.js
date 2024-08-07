@@ -17,7 +17,7 @@ export default function ProductsInCart({  }) {
                     <Link href="/catalogue">View Catalogue</Link>
                 </div>
                 :
-                <>
+                <div className="ml-auto max-w-5xl">
                     <ul className="lg:w-4/5 ml-auto">
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
@@ -50,8 +50,10 @@ export default function ProductsInCart({  }) {
                             </li>
                         )}            
                     </ul>
-                    <Link className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full block p-4 mt-2 uppercase" href="">Checkout</Link>
-                </>
+                    <form>
+                        <button type="submit" role="link" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full block p-4 mt-2 uppercase" href="">Checkout</button>
+                    </form>
+                </div>
             }
         </>
     )
