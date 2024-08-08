@@ -31,32 +31,6 @@ export default function ProductsInCart() {
         }
     }, []);
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const stripe = await stripePromise;
-    
-        const response = await fetch('/api/checkout_sessions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            line_items: cart.map(item => ({
-              price: item.attributes.price_id, // Ensure you have the correct price ID here
-              quantity: item.quantity,
-            })),
-          }),
-        });
-    
-        const session = await response.json();
-    
-        if (response.ok) {
-          stripe.redirectToCheckout({ sessionId: session.id });
-        } else {
-          console.error(session.error);
-        }
-    };
-
     return (
         <>
             {cart.length === 0 ? 
@@ -98,7 +72,7 @@ export default function ProductsInCart() {
                             </li>
                         )}            
                     </ul>
-                    <form onSubmit={handleSubmit}>
+                    <form action="/api/checkout_sessions" method="POST">
                         <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
