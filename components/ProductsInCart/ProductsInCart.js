@@ -2,7 +2,12 @@
 import { CartContext } from "@/app/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
 
 export default function ProductsInCart() {
     const { cart, changeItemQuantity, removeItemFromCart } = useContext(CartContext);
@@ -13,6 +18,18 @@ export default function ProductsInCart() {
     cart.forEach(item => {
         totalCost += item.attributes.price * item.quantity;
     });
+
+    useEffect(() => {
+        // Check to see if this is a redirect back from Checkout
+        const query = new URLSearchParams(window.location.search);
+        if (query.get('success')) {
+          console.log('Order placed! You will receive an email confirmation.');
+        }
+    
+        if (query.get('canceled')) {
+          console.log('Order canceled -- continue to shop around and checkout when you’re ready.');
+        }
+    }, []);
 
     return (
         <>
@@ -55,7 +72,7 @@ export default function ProductsInCart() {
                             </li>
                         )}            
                     </ul>
-                    <form>
+                    <form action="/api/checkout_sessions" method="POST">
                         <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
