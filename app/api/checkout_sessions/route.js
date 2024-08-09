@@ -16,7 +16,7 @@ export async function POST(req) {
       ],
       mode: 'payment',
       success_url: `${origin}/?success=true`,
-      cancel_url: `${origin}/?canceled=true`,
+      cancel_url: `${origin}/cancelled_order`,
     });
 
     return NextResponse.redirect(session.url, 303);
