@@ -15,7 +15,7 @@ export async function POST(req) {
         },
       ],
       mode: 'payment',
-      success_url: `${origin}/?success=true`,
+      success_url: `${origin}/successful_order`,
       cancel_url: `${origin}/cancelled_order`,
     });
 
