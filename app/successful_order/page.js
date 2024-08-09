@@ -8,11 +8,6 @@ export const metadata = {
 
 export default async function Page({ searchParams }) {
   const sessionId = searchParams.session_id;
-
-  if (!sessionId) {
-    redirect('/');
-  }
-
   const stripeInstance = stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
