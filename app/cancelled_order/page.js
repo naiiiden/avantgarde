@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import stripe from 'stripe';
 
@@ -18,8 +19,10 @@ export default async function Page({ searchParams }) {
     }
 
     return (
-        <main className="px-4 pb-4 max-w-5xl mx-auto">
-            <h1>Cancelled order.</h1>
+        <main className="px-4 pb-4 max-w-5xl mx-auto text-center">
+            <h1 className="font-bold uppercase text-2xl">Order cancelled.</h1>
+            <p>Your order has been cancelled. If this was a mistake, you can try placing your order again.</p>
+            <Link href="/cart">Return to cart</Link>
         </main>
     );
   } catch (error) {

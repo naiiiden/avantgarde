@@ -19,7 +19,7 @@ export default async function Page({ searchParams }) {
 
     return (
         <main className="px-4 pb-4 max-w-5xl mx-auto">
-            <h1>Successful order.</h1>
+            <h1>Order successful.</h1>
         </main>
     );
   } catch (error) {
