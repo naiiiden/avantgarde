@@ -18,8 +18,10 @@ export default async function Page({ searchParams }) {
     }
 
     return (
-        <main className="px-4 pb-4 max-w-5xl mx-auto">
-            <h1>Order successful.</h1>
+        <main className="px-4 pb-4 max-w-5xl mx-auto text-center">
+            <h1 className="font-bold uppercase text-2xl">Order successful.</h1>
+            <p>Thank you for your purchase! Your order was successful.</p>
+            <a href="/catalogue">Return to Catalogue</a>
         </main>
     );
   } catch (error) {
