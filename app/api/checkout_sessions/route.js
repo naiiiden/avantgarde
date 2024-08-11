@@ -11,7 +11,7 @@ export async function POST(req) {
     // Create line items from the cart data
     const lineItems = cartData.map(item => ({
       price_data: {
-        currency: 'usd', // Or your preferred currency
+        currency: 'eur', // Or your preferred currency
         product_data: {
           name: item.attributes.name,
           description: `${item.attributes.creator}, ${item.attributes.date}`,
