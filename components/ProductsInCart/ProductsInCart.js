@@ -14,6 +14,24 @@ export default function ProductsInCart() {
         totalCost += item.attributes.price * item.quantity;
     });
 
+    const handleCheckout = async (e) => {
+        e.preventDefault();
+        
+        const response = await fetch('/api/checkout_sessions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(cart), // cartItems is your cart data from context
+        });
+      
+        const { url } = await response.json();
+        
+        if (url) {
+          window.location.href = url; // Redirect to Stripe Checkout
+        }
+      };
+
     return (
         <>
             {cart.length === 0 ? 
@@ -55,7 +73,7 @@ export default function ProductsInCart() {
                             </li>
                         )}            
                     </ul>
-                    <form action="/api/checkout_sessions" method="POST">
+                    <form onSubmit={handleCheckout}>
                         <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
