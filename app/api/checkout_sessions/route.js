@@ -14,7 +14,7 @@ export async function POST(req) {
         currency: 'eur', // Or your preferred currency
         product_data: {
           name: item.attributes.name,
-          description: `${item.attributes.creator}, ${item.attributes.date}`,
+          description: `by ${item.attributes.creator}`,
         },
         unit_amount: item.attributes.price * 100, // Stripe expects the amount in cents
       },
