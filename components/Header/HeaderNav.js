@@ -14,7 +14,12 @@ export default function HeaderNav({ data }) {
                 {data.attributes['Header'].links.map((link) => 
                     <li key={link.text}>
                         <Link href={`/${link.url}`} className={`${pathname === `/${link.url}` ? 'underline italic opacity-100' : 'opacity-65 hover:underline hover:opacity-100'} decoration-2 leading-none inline-flex font-semibold`}>
-                            {link.text} {link.text.toLowerCase() === "cart" && <span className="before:content-['('] after:content-[')'] inline-flex">{cart.length}</span>}
+                            {link.text} {link.text.toLowerCase() === "cart" && 
+                            <span>
+                                &nbsp;
+                                <span className="before:content-['('] after:content-[')'] inline-flex">{cart.length}</span>
+                            </span>
+                            }
                         </Link>
                     </li>
                 )}
