@@ -66,7 +66,7 @@ export default function ProductsInCart() {
                                         />
                                     </label>
                                     <div className="mt-auto flex justify-between">
-                                        <button className="underline uppercase text-xs opacity-65 hover:opacity-100" onClick={() => removeItemFromCart(item.id)}>Remove</button>
+                                        <button className="underline uppercase font-medium text-xs opacity-65 hover:opacity-100" onClick={() => removeItemFromCart(item.id)}>Remove</button>
                                         <p>€{item.attributes.price}</p>
                                     </div>
                                 </div>
