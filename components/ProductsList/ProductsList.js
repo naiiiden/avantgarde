@@ -41,7 +41,7 @@ export default function ProductsList({ searchParams, data }) {
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
             </div>
             {searchParams.view === "grid" &&
-                <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <ul className="products-list-reveal grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {data.map((item, index) =>
                         <li key={index} className={`transition-opacity duration-500 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''}`}>
                             <Link href={`product/${item.attributes.urlHandle}`} 
@@ -68,7 +68,7 @@ export default function ProductsList({ searchParams, data }) {
                             <p className="w-2/5 text-end sm:w-1/3 md:w-1/4 lg:w-1/5">Price:</p>
                         </div>
                     </div>
-                    <ul className="grid">
+                    <ul className="products-list-reveal grid">
                         {data.map((item, index) =>
                             <li key={index} className={`border-b last:border-b-0 border-black transition-all duration-500 ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-10' : ''} ${hoveredIndex === index ? 'border-black/10' : ''}`}>
                                 <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.attributes.urlHandle}`}

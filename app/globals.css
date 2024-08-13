@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
+main, .products-list-reveal {
     opacity: 0;
     animation: reveal 1s forwards;
 }
