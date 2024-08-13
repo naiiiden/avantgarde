@@ -40,6 +40,8 @@ Fifth, seed the data:
 npm run strapi import export_20240805235503.tar.gz.enc 
 ```
 
-Sixth, set up the frontend by generating a Strapi API token "`STRAPI_API_KEY`" from the dashboard at [http://localhost:1337/admin](http://localhost:1337/admin)
+Sixth, set up the frontend by generating a Strapi API token `STRAPI_API_KEY` from the dashboard at [http://localhost:1337/admin](http://localhost:1337/admin)
 
 Seventh, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Eighth, generate API Keys from Stripe by going to the [Stripe Dashboard](https://dashboard.stripe.com/), navigate to the API keys section and copy the `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` and `STRIPE_SECRET_KEY`. Add the keys to the `.env` file in the root folder.
