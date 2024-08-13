@@ -1,6 +1,14 @@
 # Avantgarde
 
-This is a design + [Next.js](https://nextjs.org/) + Strapi CMS + Stripe for payment processing practice project.
+This is a design + [Next.js](https://nextjs.org/) + [Strapi CMS](https://strapi.io/) + [Stripe](https://stripe.com/) for payment processing practice project.
+All images rights belong to Google’s Arts and Culture and their respective owners.
+
+![Mobile home](/images/home_mobile.png)
+![Desktop home](/images/home_desktop.png)
+![Mobile catalogue](/images/catalogue_mobile.png)
+![Desktop catalogue](/images/catalogue_desktop.png)
+![Mobile product](/images/product_mobile.png)
+![Desktop product](/images/product_desktop.png)
 
 ## Getting Started
 
