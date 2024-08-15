@@ -9,7 +9,7 @@ export default async function Home() {
     <>
         <SplashScreen/>
         <main>
-        <h1 className="sr-only">An exquisite collection of contemporary furniture designs.</h1>
+        <h1 className="sr-only">Avantgarde is an exquisite collection of carefully curated contemporary furniture designs.</h1>
         <HomeProductSilder data={data.data}/>
         </main>
     </>
