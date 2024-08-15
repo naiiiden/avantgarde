@@ -9,8 +9,8 @@ export default function SplashScreen() {
         setSplashViewed(true);
     }
 
-    return !splashViewed && (
-        <div className="fixed inset-0 z-50 bg-[#0c0c0c] text-white font-bold" onClick={closeSplash}>
+    return (
+        <div className={`fixed inset-0 z-50 bg-[#0c0c0c] text-white font-bold ${!splashViewed ? '' : '-translate-y-full'} transition-all duration-1000`} onClick={closeSplash}>
             <h1>Avantgarde is an exquisite collection of carefully curated contemporary furniture designs.</h1>
         </div>
     ) 
