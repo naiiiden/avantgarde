@@ -32,7 +32,7 @@ export default function ProductsList({ searchParams, data }) {
 
     return (
         <>
-            <div className="flex flex-wrap justify-between gap-4">
+            <div className="flex flex-wrap justify-between gap-4 text-sm">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
@@ -70,7 +70,7 @@ export default function ProductsList({ searchParams, data }) {
                     <ul className="products-list-reveal grid">
                         {data.map((item, index) =>
                             <li key={index} className="border-b last:border-b-0 border-black transition-all duration-500 group">
-                                <Link className="flex py-2 text-sm xl:text-base" href={`product/${item.attributes.urlHandle}`}>
+                                <Link className="flex py-2 text-sm" href={`product/${item.attributes.urlHandle}`}>
                                     <Image unoptimized className="max-w-24 sm:max-w-32 lg:max-w-40 group-hover:max-w-28 group-hover:sm:max-w-44 group-hover:lg:max-w-56 group-focus-within:max-w-28 group-focus-within:sm:max-w-44 group-focus-within:lg:max-w-56 transition-all duration-500" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
                                     <div className="p-1.5 flex gap-2 md:gap-4 xl:gap-6 2xl:gap-8 flex-grow">
                                         <h2 className="w-3/5 sm:w-1/3 md:w-1/4 lg:w-1/5">{item.attributes.name}</h2>
