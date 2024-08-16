@@ -38,7 +38,7 @@ export default function ProductsList({ searchParams, data }) {
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
             </div>
             {searchParams.view === "grid" &&
-                <ul className="products-list-reveal grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <ul className="products-list-reveal grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {data.map((item, index) =>
                         <li key={index} className="relative group">
                             <Link href={`product/${item.attributes.urlHandle}`}>
