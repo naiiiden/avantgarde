@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-main, .products-list-reveal {
+main, .products-list-reveal, .splash-text {
     opacity: 0;
     animation: reveal 1s forwards;
+
+    &.splash-text {
+        animation-delay: .25s;
+    }
 }
 
 @keyframes reveal {
