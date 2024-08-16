@@ -42,7 +42,7 @@ export default function ProductsList({ searchParams, data }) {
                     {data.map((item, index) =>
                         <li key={index} className="relative group">
                             <Link href={`product/${item.attributes.urlHandle}`}>
-                                <Image className="group-hover:opacity-[.0375] group-focus-within:opacity-[.0375] transition-opacity duration-500" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt=""/>
+                                <Image className="group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt=""/>
                                 <div className="p-1.5 grid gap-2 text-sm absolute top-0 left-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
                                     <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
                                     <p aria-hidden="true"><span className="font-semibold">Year:</span> {item.attributes.date}</p> 
