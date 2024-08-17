@@ -43,13 +43,13 @@ export default function ProductsList({ searchParams, data }) {
                         <li key={index} className="relative group">
                             <Link href={`product/${item.attributes.urlHandle}`}>
                                 {item.attributes?.image?.data?.attributes?.url ? (
-                                    <Image className="group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt=""/>
+                                        <Image className="group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt=""/>
                                     ) : (
-                                        <div className="min-h-64 grid place-content-center text-center group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500">
+                                        <div className="text-xs min-h-64 grid place-content-center text-center group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500">
                                             <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#0c0c0c"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
                                             Image not available
                                         </div>
-                                    )}
+                                )}
                                 <div className="p-1.5 grid gap-2 text-sm absolute top-0 left-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
                                     <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
                                     <p aria-hidden="true"><span className="font-semibold">Year:</span> {item.attributes.date}</p> 
@@ -81,7 +81,7 @@ export default function ProductsList({ searchParams, data }) {
                                     {item.attributes?.image?.data?.attributes?.url ? (
                                         <Image unoptimized className="w-full max-w-24 sm:max-w-32 lg:max-w-40 group-hover:max-w-28 group-hover:sm:max-w-44 group-hover:lg:max-w-56 group-hover:xl:max-w-60 group-focus-within:max-w-28 group-focus-within:sm:max-w-44 group-focus-within:lg:max-w-56 group-focus-within:xl:max-w-60 transition-all duration-500" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
                                     ) : (
-                                        <div className="w-full max-w-24 sm:max-w-32 lg:max-w-40 text-center">
+                                        <div className="min-h-28 grid place-content-center text-xs w-full max-w-24 sm:max-w-32 lg:max-w-40 text-center">
                                             <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#0c0c0c"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
                                             Image not available
                                         </div>

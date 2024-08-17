@@ -45,7 +45,14 @@ export default function ProductsInCart() {
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
                                 <Link href={`product/${item.attributes.urlHandle}`}>
-                                    <Image className="max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt={item.attributes.name}/>
+                                    {item.attributes?.image?.data?.attributes?.url ? (
+                                            <Image className="w-full min-w-24 sm:min-w-32 lg:min-w-40 max-w-24 sm:max-w-32 lg:max-w-40" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={500} height={500} alt={item.attributes.name}/>
+                                        ) : (
+                                            <div className="text-xs w-full min-w-24 sm:min-w-32 lg:min-w-40 max-w-24 sm:max-w-32 lg:max-w-40 min-h-64 grid place-content-center text-center group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500">
+                                                <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#0c0c0c"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                                                Image not available
+                                            </div>
+                                    )}
                                 </Link>
                                 <div className="w-full flex flex-col">
                                     <Link className="font-medium" href={`product/${item.attributes.urlHandle}`}>{item.attributes.name}</Link>
