@@ -34,10 +34,10 @@ npm run build
 npm run develop
 ```
 
-Fifth, seed the data:
+Fifth, seed the data. Encryption key is `test`:
 
 ```bash
-npm run strapi import export_20240805235503.tar.gz.enc 
+npm run strapi import export_20240817102610.tar.gz.enc 
 ```
 
 Sixth, set up the frontend by generating a Strapi API token `STRAPI_API_KEY` from the dashboard at [http://localhost:1337/admin](http://localhost:1337/admin)
