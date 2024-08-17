@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./tailwind.css";
 import Header from "@/components/Header/Header";
 import LenisLayout from "@/components/LenisLayout/LenisLayout";
 import { Providers } from "./providers";
