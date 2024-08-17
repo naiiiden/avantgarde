@@ -52,8 +52,15 @@ export default function HomeProductSlider({ data }) {
                             onMouseLeave={() => setHoverOnProductLink(false)} 
                             href={`product/${item.attributes.urlHandle}`} 
                             className="w-full h-full grid content-center cursor-none"
-                        >
-                            <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
+                        >   
+                            {item.attributes?.image?.data?.attributes?.url ? (
+                                <Image className="select-none w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto" unoptimized priority src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} width={700} height={700} alt=""/>
+                            ) : (
+                                <div className="text-center text-xs w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto">
+                                    <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" height="56px" viewBox="0 -960 960 960" width="56px" fill="#0c0c0c"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                                    Image not available
+                                </div>
+                            )}
                             <h2 className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto font-semibold uppercase text-[.5rem] md:text-[.625rem]">{item.attributes.name}</h2>
                         </Link>
                     </swiper-slide>
