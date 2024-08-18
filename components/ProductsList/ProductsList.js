@@ -40,8 +40,8 @@ export default function ProductsList({ searchParams, data }) {
             {searchParams.view === "grid" &&
                 <ul className="products-list-reveal grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {data.map((item, index) =>
-                        <li key={index} className="relative group">
-                            <Link href={`product/${item.attributes.urlHandle}`}>
+                        <li key={index} className="relative">
+                            <Link className="group" href={`product/${item.attributes.urlHandle}`}>
                                 {item.attributes?.image?.data?.attributes?.url ? (
                                         <Image className="group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1000} height={1000} alt=""/>
                                     ) : (
