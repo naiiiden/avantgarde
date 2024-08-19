@@ -3,6 +3,8 @@
 This is a design + [Next.js](https://nextjs.org/) + [Strapi CMS](https://strapi.io/) + [Stripe](https://stripe.com/) for payment processing practice project.
 All image rights belong to Google’s Arts and Culture and their respective owners.
 
+![Gif](/images//project_showcase.gif)
+
 ![Mobile home](/images/home_mobile.png)
 ![Desktop home](/images/home_desktop.png)
 ![Mobile catalogue](/images/catalogue_mobile.png)
