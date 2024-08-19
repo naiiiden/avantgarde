@@ -46,9 +46,9 @@ export default async function Page({ params }) {
                     Image not available
                 </div>
             )}
-            <div className={`flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+            <div className={`text-sm flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
                 <div className="max-w-96 ml-auto lg:pl-1">
-                    <h1 className="text-lg"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
+                    <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
                     <p><span className="font-semibold">Year:</span> {currentProduct.data[0].attributes.date}</p> 
                     <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
                     <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
