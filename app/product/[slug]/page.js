@@ -46,14 +46,13 @@ export default async function Page({ params }) {
                     Image not available
                 </div>
             )}
-            <div className={`text-sm flex-grow my-auto lg:sticky lg:top-1/2 lg:-translate-y-1/2 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
-                <div className="max-w-96 ml-auto lg:pl-1">
-                    <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
-                    <p><span className="font-semibold">Year:</span> {currentProduct.data[0].attributes.date}</p> 
-                    <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
-                    <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
-                    <AddToCartButton productToAdd={currentProduct.data[0]}/>
-                </div>
+            <div className={`max-w-96 grid ml-auto lg:pl-1 text-sm flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+                <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}</h1>
+                <p className="my-4">“MT”, the acronym defining this collection designed by Ron Arad, in english is pronounced “empty” that means “vacuum” and emptiness is really the key element of this project. The volume is hollowed and presents provoctively its interior, finished in two colours. This is possible thanks to a double step in the rotational molding. First of all the polyethylene of the outer shell color is placed in the mold. once formed this layer, the second color is inserted and adhere to the first without merging the two polymers, even though this process takes place in blast furnaces. Once extracted from the mold, a five-axis laser will cut off the lateral ends of the product, revealing the two-tone side of the MT. From the typological point of view is also reported the presence of a rocking chair, a rarity in the contemporary world.</p>
+                <p><span className="font-semibold">Year:</span> {currentProduct.data[0].attributes.date}</p> 
+                <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
+                <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
+                <AddToCartButton productToAdd={currentProduct.data[0]}/>
             </div>
         </main>
     )
