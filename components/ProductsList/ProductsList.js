@@ -6,7 +6,7 @@ import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/Ca
 export default function ProductsList({ searchParams, data }) {
 
     if (!searchParams.view) {
-        searchParams.view = 'index';
+        searchParams.view = 'grid';
     }
 
     if (!searchParams.sortBy) {
