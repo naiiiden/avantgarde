@@ -40,7 +40,7 @@ export default function ProductsInCart() {
                     <Link href="/catalogue">View Catalogue</Link>
                 </div>
                 :
-                <div className="ml-auto max-w-5xl">
+                <div className="ml-auto max-w-7xl">
                     <ul className="lg:w-4/5 ml-auto">
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
