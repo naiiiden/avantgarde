@@ -1,11 +1,11 @@
-import { Inter } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import "./tailwind.css";
 import Header from "@/components/Header/Header";
 import LenisLayout from "@/components/LenisLayout/LenisLayout";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter_Tight({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Avantgarde",
