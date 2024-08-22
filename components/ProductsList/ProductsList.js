@@ -51,12 +51,14 @@ export default function ProductsList({ searchParams, data }) {
                                         </div>
                                 )}
                                 <div className="p-1.5 grid gap-2 text-sm absolute top-0 left-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
-                                    <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
                                     <p aria-hidden="true"><span className="font-semibold">Year:</span> {item.attributes.date}</p> 
                                     <p aria-hidden="true"><span className="font-semibold">Material(s):</span> {item.attributes.medium}</p>
                                     <p aria-hidden="true"><span className="font-semibold">Dimensions: </span>{item.attributes.dimensions}</p>
                                 </div>
-                                <div aria-hidden="true" className="top-0 p-1.5 text-xs font-bold text-end">{(index + 1).toString().padStart(2, '0')}</div>
+                                <div className="flex text-xs items-center justify-between p-1.5">
+                                    <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
+                                    <div aria-hidden="true" className="top-0 font-bold">{(index + 1).toString().padStart(2, '0')}</div>
+                                </div>
                             </Link>
                         </li>
                     )}
