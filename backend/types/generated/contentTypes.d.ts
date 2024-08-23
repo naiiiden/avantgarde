@@ -920,6 +920,38 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiSplashScreenPageSplashScreenPage extends Schema.SingleType {
+  collectionName: 'splash_screen_pages';
+  info: {
+    singularName: 'splash-screen-page';
+    pluralName: 'splash-screen-pages';
+    displayName: 'splashScreenPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    btnText: Attribute.String;
+    mainText: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::splash-screen-page.splash-screen-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::splash-screen-page.splash-screen-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -942,6 +974,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::information-page.information-page': ApiInformationPageInformationPage;
       'api::product.product': ApiProductProduct;
+      'api::splash-screen-page.splash-screen-page': ApiSplashScreenPageSplashScreenPage;
     }
   }
 }
