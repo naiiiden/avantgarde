@@ -17,8 +17,8 @@ export default function SplashScreenClient({ data }) {
     return (
         <div onBlur={closeSplash} className={`fixed grid items-center justify-end inset-0 z-50 bg-[#0c0c0c] text-white font-bold ${!splashViewed ? '' : '-translate-y-full'} transition-all duration-1000`}>
             <div className="fixed inset-0 z-30 cursor-pointer" onClick={closeSplash}></div>
-            <div className="p-4 splash-text" aria-hidden="true">
-                <ReactMarkdown className="relative z-40 text-2xl md:text-3xl max-w-2xl">
+            <div className="p-4 splash-text relative z-40" aria-hidden="true">
+                <ReactMarkdown className="text-2xl md:text-3xl max-w-2xl">
                     {data.data.attributes.mainText}
                 </ReactMarkdown>
                 <div className="mt-3 uppercase text-sm">{data.data.attributes.btnText}</div>
