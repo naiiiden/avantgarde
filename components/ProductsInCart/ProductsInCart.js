@@ -81,7 +81,7 @@ export default function ProductsInCart() {
                         )}            
                     </ul>
                     <form onSubmit={handleCheckout}>
-                        <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold bg-black text-center text-white w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
+                        <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold border border-black text-center w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
             }
