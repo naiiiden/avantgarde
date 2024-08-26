@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
+import CatalogueProductsGridColsForm from "../CatalogueProductsGridColsForm/CatalogueProductsGridColsForm";
 
 export default function ProductsList({ searchParams, data }) {
 
@@ -30,15 +31,18 @@ export default function ProductsList({ searchParams, data }) {
             break;
     }
 
+    console.log(555, searchParams.cols);
+
     return (
         <>
             <div className="flex flex-wrap justify-between gap-4 text-sm">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
+                <CatalogueProductsGridColsForm currentView={searchParams.cols}/>
             </div>
             {searchParams.view === "grid" &&
-                <ul className="products-list-reveal grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <ul className={`products-list-reveal grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4`}>
                     {data.map((item, index) =>
                         <li key={index} className="relative">
                             <Link className="group" href={`product/${item.attributes.urlHandle}`}>
