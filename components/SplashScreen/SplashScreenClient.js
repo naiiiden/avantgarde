@@ -12,9 +12,10 @@ export default function SplashScreenClient({ data }) {
         setSplashViewed(true);
     }
 
-    const renderLink = ({ children }) => {
+    const renderLink = ({ href, children }) => {
         return (
-            <a
+            <a  
+                href={href}
                 target="_blank"
                 tabIndex={splashViewed ? -1 : 1}
             >
