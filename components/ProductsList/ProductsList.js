@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import CatalogueProductsViewForm from "@/components/CatalogueProductsViewForm/CatalogueProductsViewForm";
 import CatalogueSortProductsForm from "@/components/CatalogueSortProductsForm/CatalogueSortProductsForm";
-import CatalogueProductsGridColsForm from "../CatalogueProductsGridColsForm/CatalogueProductsGridColsForm";
 
 export default function ProductsList({ searchParams, data }) {
 
@@ -39,7 +38,6 @@ export default function ProductsList({ searchParams, data }) {
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
                 <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
-                <CatalogueProductsGridColsForm currentView={searchParams.cols}/>
             </div>
             {searchParams.view === "grid" &&
                 <ul style={{ gridTemplateColumns: `repeat(${searchParams.cols}, minmax(0, 1fr))` }} className="products-list-reveal grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
