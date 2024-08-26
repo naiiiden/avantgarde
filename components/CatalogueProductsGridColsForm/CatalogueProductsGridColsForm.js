@@ -16,12 +16,12 @@ export default function CatalogueProductsGridColsForm({ currentView }) {
     return (
         <form className="pb-4 flex flex-wrap gap-x-2 justify-end">
             <p className="font-semibold">View:</p>
-            <label className="relative">
+            <label className="relative md:hidden">
                 <input checked={currentView === "1"} onChange={(e) => handleSort(e.target.id)} name="view" id="1" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
                 <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline">1</span>
                 <span aria-hidden="true">,</span>
             </label>
-            <label className="relative">
+            <label className="relative lg:hidden">
                 <input checked={currentView === "2"} onChange={(e) => handleSort(e.target.id)} name="view" id="2" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
                 <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline">2</span>
                 <span className="hidden md:inline-block" aria-hidden="true">,</span>
