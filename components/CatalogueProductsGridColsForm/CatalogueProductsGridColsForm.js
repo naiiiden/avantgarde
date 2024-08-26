@@ -16,7 +16,7 @@ export default function CatalogueProductsGridColsForm({ currentView }) {
     return (
         <form className="flex">
             (
-            <div className="pb-4 flex flex-wrap gap-x-2 justify-end">
+            <div className="pb-4 flex flex-wrap gap-x-1 justify-end">
                 <p className="font-semibold">cols:</p>
                 <label className="relative md:hidden">
                     <input checked={currentView === "1"} onChange={(e) => handleSort(e.target.id)} name="view" id="1" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
@@ -45,6 +45,7 @@ export default function CatalogueProductsGridColsForm({ currentView }) {
                 </label>
             </div>
             )
+            <span aria-hidden="true">,</span>
         </form>
     )
 }
