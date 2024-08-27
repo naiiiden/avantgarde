@@ -57,7 +57,7 @@ export default function ProductsList({ searchParams, data }) {
                                     <p aria-hidden="true"><span className="font-semibold">Material(s):</span> {item.attributes.medium}</p>
                                     <p aria-hidden="true"><span className="font-semibold">Dimensions: </span>{item.attributes.dimensions}</p>
                                 </div>
-                                <div className="flex text-xs items-center justify-between p-1.5">
+                                <div className="flex text-xs justify-between p-1.5">
                                     <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
                                     <div aria-hidden="true" className="top-0 font-bold">{(index + 1).toString().padStart(2, '0')}</div>
                                 </div>
