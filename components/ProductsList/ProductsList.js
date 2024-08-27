@@ -40,7 +40,7 @@ export default function ProductsList({ searchParams, data }) {
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
             </div>
             {searchParams.view === "grid" &&
-                <ul style={{ gridTemplateColumns: `repeat(${searchParams.cols}, minmax(0, 1fr))` }} className="products-list-reveal grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                <ul style={searchParams.cols < 6 ? { gridTemplateColumns: `repeat(${searchParams.cols}, minmax(0, 1fr))` } : undefined} className="products-list-reveal grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {data.map((item, index) =>
                         <li key={index} className="relative">
                             <Link className="group" href={`product/${item.attributes.urlHandle}`}>
