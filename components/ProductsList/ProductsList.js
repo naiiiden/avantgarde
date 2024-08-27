@@ -35,7 +35,7 @@ export default function ProductsList({ searchParams, data }) {
         <>
             <div className="flex flex-wrap justify-between gap-4 text-sm">
                 <p className="w-fit">{data.length} {data.length > 1 ? 'products' : 'product'}</p>
-                <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
+                <CatalogueSortProductsForm currentSortBy={searchParams.sortBy}/>
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
             </div>
             <ProductsListGrid searchParams={searchParams} data={data} defaultCols={5}/>

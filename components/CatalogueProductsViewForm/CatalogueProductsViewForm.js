@@ -22,7 +22,7 @@ export default function CatalogueProductsViewForm({ currentView }) {
                     <input checked={currentView === "grid"} onChange={(e) => handleSort(e.target.id)} name="view" id="grid" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
                     <span className="peer-checked:underline peer-hover:underline decoration-2 peer-focus:outline">grid</span>
                 </label>
-                {currentView === "grid" && <CatalogueProductsGridColsForm currentView={searchParams.cols}/>}
+                {currentView === "grid" && <CatalogueProductsGridColsForm currentCols={searchParams.cols}/>}
             </div>
             <label className="relative">
                 <input checked={currentView === "index"} onChange={(e) => handleSort(e.target.id)} name="view" id="index" className="peer opacity-0 w-full h-full absolute cursor-pointer" type="radio"/>
