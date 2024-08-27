@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+
+import { useState } from "react";
 
 export default function SplashScreenClient({ data }) {
     const [splashViewed, setSplashViewed] = useState(sessionStorage.getItem("splashShown"));

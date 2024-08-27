@@ -1,4 +1,5 @@
-import ReactMarkdown from "react-markdown"
+import ReactMarkdown from "react-markdown";
+
 import { getData } from "../utilities/getData";
 
 export const metadata = {

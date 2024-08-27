@@ -1,7 +1,8 @@
 "use client";
-import { CartContext } from "@/app/context/CartContext";
 import Link from "next/link";
+
 import { useContext, useState, useEffect } from "react";
+import { CartContext } from "@/app/context/CartContext";
 
 export default function AddToCartButton({ productToAdd }) {
     const { cart, addToCart } = useContext(CartContext);

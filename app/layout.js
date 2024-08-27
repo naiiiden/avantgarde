@@ -1,4 +1,5 @@
 import { Inter_Tight } from "next/font/google";
+
 import "./globals.css";
 import "./tailwind.css";
 import Header from "@/components/Header/Header";

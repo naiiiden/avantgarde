@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { getData } from "@/app/utilities/getData";
 import { notFound } from "next/navigation";
+
+import { getData } from "@/app/utilities/getData";
 import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
 
 export async function generateMetadata({ params }) {

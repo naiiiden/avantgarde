@@ -1,7 +1,8 @@
 "use client";
-import { useContext } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { useContext } from "react";
 import { CartContext } from "@/app/context/CartContext";
 
 export default function HeaderNav({ data }) {

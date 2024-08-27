@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 import { register } from "swiper/element/bundle";
+
 import Link from "next/link";
 import Image from "next/image";
+
+import { useEffect, useRef, useState } from "react";
 
 export default function HomeProductSlider({ data }) {
     const sliderRef = useRef(null);

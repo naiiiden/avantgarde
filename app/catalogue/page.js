@@ -1,9 +1,11 @@
 import 'dotenv/config';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
 import CatalogueProductsViewForm from '@/components/CatalogueProductsViewForm/CatalogueProductsViewForm';
 import CatalogueSortProductsForm from '@/components/CatalogueSortProductsForm/CatalogueSortProductsForm';
 import { getData } from '../utilities/getData';
-import Link from 'next/link';
-import Image from 'next/image';
 
 export const metadata = {
     title: "Catalogue | Avantgarde",

@@ -1,5 +1,6 @@
-import { redirect } from 'next/navigation';
 import stripe from 'stripe';
+
+import { redirect } from 'next/navigation';
 
 export const metadata = {
     title: "Successful Order | Avantgarde",

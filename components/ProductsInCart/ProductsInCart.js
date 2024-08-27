@@ -1,8 +1,9 @@
 "use client";
-import { CartContext } from "@/app/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+
+import { useContext } from "react";
+import { CartContext } from "@/app/context/CartContext";
 
 export default function ProductsInCart() {
     const { cart, changeItemQuantity, removeItemFromCart } = useContext(CartContext);

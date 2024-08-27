@@ -1,6 +1,7 @@
+import stripe from 'stripe';
+
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import stripe from 'stripe';
 
 export const metadata = {
     title: "Cancelled Order | Avantgarde",
