@@ -14,7 +14,7 @@ export default function CatalogueProductsGridColsForm({ currentView }) {
     }
 
     return (
-        <form className="flex">
+        <div className="flex">
             (
             <div className="pb-4 flex flex-wrap gap-x-1 justify-end">
                 <p className="font-semibold">cols:</p>
@@ -46,6 +46,6 @@ export default function CatalogueProductsGridColsForm({ currentView }) {
             </div>
             )
             <span aria-hidden="true">,</span>
-        </form>
+        </div>
     )
 }
