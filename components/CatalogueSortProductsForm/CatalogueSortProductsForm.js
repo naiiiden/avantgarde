@@ -13,6 +13,8 @@ export default function CatalogueSortProductsForm({ currentSortBy }) {
         router.push(`${pathname}?${params.toString()}`);
     }
 
+    console.log(555, currentSortBy);
+
     return (
         <form className="pb-4 flex flex-wrap gap-x-2 justify-end">
             <p className="font-semibold">Sort by:</p>

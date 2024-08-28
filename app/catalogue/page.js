@@ -45,7 +45,7 @@ export default async function Page({ searchParams }) {
             <h1 className="sr-only">Catalogue</h1>
             <div className="flex flex-wrap justify-between gap-4 text-sm">
                 <p className="w-fit">{data.data.length} {data.data.length > 1 ? 'products' : 'product'}</p>
-                <CatalogueSortProductsForm currentView={searchParams.sortBy}/>
+                <CatalogueSortProductsForm currentSortBy={searchParams.sortBy}/>
                 <CatalogueProductsViewForm currentView={searchParams.view}/>
             </div>
             {searchParams.view === "grid" &&
