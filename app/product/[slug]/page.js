@@ -47,12 +47,14 @@ export default async function Page({ params }) {
                     Image not available
                 </div>
             )}
-            <div className={`max-w-96 ml-auto lg:pl-1 text-sm flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
-                <div className="max-lg:px-4">
-                    <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}, <span className="font-semibold">{currentProduct.data[0].attributes.date}</span></h1>
-                    {currentProduct.data[0].attributes.description !== null && <p className="my-4">{currentProduct.data[0].attributes.description}</p>}
-                    <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
-                    <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
+            <div>
+                <div className={`max-w-96 ml-auto lg:pl-1 text-sm flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+                    <div className="max-lg:px-4">
+                        <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}, <span className="font-semibold">{currentProduct.data[0].attributes.date}</span></h1>
+                        {currentProduct.data[0].attributes.description !== null && <p className="my-4">{currentProduct.data[0].attributes.description}</p>}
+                        <p><span className="font-semibold">Material(s):</span> {currentProduct.data[0].attributes.medium}</p>
+                        <p><span className="font-semibold">Dimensions: </span>{currentProduct.data[0].attributes.dimensions}</p>
+                    </div>
                 </div>
                 <AddToCartButton productToAdd={currentProduct.data[0]}/>
             </div>
