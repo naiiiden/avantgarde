@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "cart_shipping_pages",
+  "info": {
+    "singularName": "cart-shipping-page",
+    "pluralName": "cart-shipping-pages",
+    "displayName": "cartShippingPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cartShippingText": {
+      "type": "richtext"
+    }
+  }
+}

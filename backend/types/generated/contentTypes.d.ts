@@ -788,6 +788,36 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCartShippingPageCartShippingPage extends Schema.SingleType {
+  collectionName: 'cart_shipping_pages';
+  info: {
+    singularName: 'cart-shipping-page';
+    pluralName: 'cart-shipping-pages';
+    displayName: 'cartShippingPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cartShippingText: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cart-shipping-page.cart-shipping-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cart-shipping-page.cart-shipping-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactPageContactPage extends Schema.SingleType {
   collectionName: 'contact_pages';
   info: {
@@ -970,6 +1000,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::cart-shipping-page.cart-shipping-page': ApiCartShippingPageCartShippingPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::global.global': ApiGlobalGlobal;
       'api::information-page.information-page': ApiInformationPageInformationPage;
