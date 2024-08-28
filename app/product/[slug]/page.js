@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getData } from "@/app/utilities/getData";
 import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
+import HeaderHeightStickyVal from "@/components/Utils/HeaderHeightStickyVal";
 
 export async function generateMetadata({ params }) {
     let currentProduct;
@@ -47,8 +48,8 @@ export default async function Page({ params }) {
                     Image not available
                 </div>
             )}
-            <div>
-                <div className={`max-w-96 ml-auto lg:pl-1 text-sm flex-grow mt-auto lg:sticky lg:bottom-4 ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+            <HeaderHeightStickyVal>
+                <div className={`desc max-w-96 ml-auto lg:pl-1 text-sm flex-grow mt-auto ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
                     <div className="max-lg:px-4">
                         <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}, <span className="font-semibold">{currentProduct.data[0].attributes.date}</span></h1>
                         {currentProduct.data[0].attributes.description !== null && <p className="my-4">{currentProduct.data[0].attributes.description}</p>}
@@ -57,7 +58,7 @@ export default async function Page({ params }) {
                     </div>
                 </div>
                 <AddToCartButton productToAdd={currentProduct.data[0]}/>
-            </div>
+            </HeaderHeightStickyVal>
         </main>
     )
 }
