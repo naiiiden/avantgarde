@@ -41,8 +41,8 @@ export default function ProductsInCart() {
                     <Link href="/catalogue">View Catalogue</Link>
                 </div>
                 :
-                <div className="ml-auto w-full max-w-7xl">
-                    <ul className="lg:w-4/5 ml-auto">
+                <div className="w-full max-w-5xl">
+                    <ul className="ml-auto">
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
                                 <Link href={`product/${item.attributes.urlHandle}`}>
@@ -82,7 +82,7 @@ export default function ProductsInCart() {
                         )}            
                     </ul>
                     <form onSubmit={handleCheckout}>
-                        <button type="submit" className="lg:w-4/5 lg:ml-auto sticky bottom-4 font-semibold border border-black text-center w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
+                        <button type="submit" className="sticky bottom-4 font-semibold border border-black text-center w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
             }
