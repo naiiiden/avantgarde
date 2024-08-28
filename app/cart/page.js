@@ -9,7 +9,10 @@ export default function Page({ params }) {
     return (
         <main className="px-4 pb-4 font-medium w-full">
             <h1 className="sr-only">Cart</h1>
-            <ProductsInCart/>
+            <div className="flex flex-col gap-4 md:flex-row">
+                <p className="max-w-96">At Avantgarde, shipping costs are calculated and invoiced separately. To get a shipping quote before making a purchase, please reach out to us at contact@avantgarde.dk. If the shipping costs exceed your expectations, we will gladly refund your order!</p>
+                <ProductsInCart/>
+            </div>
         </main>
     )
 }
