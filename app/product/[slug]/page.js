@@ -39,7 +39,7 @@ export default async function Page({ params }) {
     }
 
     return (
-        <main className="lg:px-4 flex flex-col gap-4 lg:flex-row lg:pl-0 lg:pb-0 mt-auto">
+        <main className="lg:px-0 flex flex-col gap-4 lg:flex-row lg:pb-0 mt-auto">
             {currentProduct.data[0].attributes?.image?.data?.attributes?.url ? (
                 <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[60%] 2xl:max-w-6xl" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
             ) : (
@@ -49,7 +49,7 @@ export default async function Page({ params }) {
                 </div>
             )}
             <HeaderHeightStickyVal>
-                <div className={`desc max-w-96 ml-auto lg:pl-1 text-sm flex-grow mt-auto ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+                <div className={`desc max-w-96 ml-auto text-sm  ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
                     <div className="max-lg:px-4">
                         <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}, <span className="font-semibold">{currentProduct.data[0].attributes.date}</span></h1>
                         {currentProduct.data[0].attributes.description !== null && <p className="my-4">{currentProduct.data[0].attributes.description}</p>}
@@ -59,6 +59,10 @@ export default async function Page({ params }) {
                 </div>
                 <AddToCartButton productToAdd={currentProduct.data[0]}/>
             </HeaderHeightStickyVal>
+            <div className="h-fit lg:fixed lg:right-0 lg:bottom-0 mt-auto ml-auto flex justify-end items-end">
+                <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto max-w-36" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+                <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto max-w-36" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+            </div>
         </main>
     )
 }
