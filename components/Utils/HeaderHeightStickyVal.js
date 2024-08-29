@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function HeaderHeightStickyVal({ children }) {
+export default function HeaderHeightStickyVal({ children, className }) {
     const [headerHeight, setHeaderHeight] = useState('');
 
     const calculateHeaderHeight = () => {
@@ -20,5 +20,5 @@ export default function HeaderHeightStickyVal({ children }) {
         }
     }, [])
 
-    return <div style={{ top: `${headerHeight}px` }} className={`h-fit lg:sticky`}>{children}</div>;
+    return <div style={{ top: `${headerHeight}px` }} className={`h-fit lg:sticky ${className}`}>{children}</div>;
 }
