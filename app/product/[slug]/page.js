@@ -49,7 +49,7 @@ export default async function Page({ params }) {
                 </div>
             )}
             <HeaderHeightStickyVal className={"pb-4"}>
-                <div className={`max-w-96 ml-auto text-sm ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
+                <div className={`max-w-[18.75rem] ml-auto text-sm ${!currentProduct.data[0].attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
                     <div className="max-lg:px-4">
                         <h1 className="text-base"><span className="font-semibold">{currentProduct.data[0].attributes.name}</span> by {currentProduct.data[0].attributes.creator}, <span className="font-semibold">{currentProduct.data[0].attributes.date}</span></h1>
                         {currentProduct.data[0].attributes.description !== null && <p className="my-4">{currentProduct.data[0].attributes.description}</p>}
