@@ -42,7 +42,7 @@ export default function ProductsInCart() {
                 </div>
                 :
                 <div className="w-full max-w-5xl">
-                    <ul className="ml-auto">
+                    <ul className="ml-auto px-4">
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
                                 <Link href={`product/${item.attributes.urlHandle}`}>
@@ -81,8 +81,8 @@ export default function ProductsInCart() {
                             </li>
                         )}            
                     </ul>
-                    <form onSubmit={handleCheckout}>
-                        <button type="submit" className="sticky bottom-4 font-semibold border border-black text-center w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
+                    <form className="sticky bottom-0 bg-slate-100 md:mx-4 md:pb-4" onSubmit={handleCheckout}>
+                        <button type="submit" className="sticky bottom-4 font-semibold border border-black max-md:border-x-0 text-center w-full flex items-center justify-center gap-2 p-4 mt-2 uppercase">Checkout <span className="text-sm opacity-65">[ €{totalCost} ]</span></button>
                     </form>
                 </div>
             }

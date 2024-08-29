@@ -12,10 +12,10 @@ export default async function Page({ params }) {
     const data = await getData('http://localhost:1337/api/cart-shipping-page');
 
     return (
-        <main className="px-4 pb-4 font-medium w-full">
+        <main className="font-medium w-full">
             <h1 className="sr-only">Cart</h1>
             <div className="flex flex-col gap-4 md:flex-row justify-end">
-                <ReactMarkdown className="max-w-96">
+                <ReactMarkdown className="max-w-96 px-4 md:pr-0">
                     {data.data.attributes['cartShippingText']}
                 </ReactMarkdown>
                 <ProductsInCart/>
