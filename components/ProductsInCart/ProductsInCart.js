@@ -36,7 +36,7 @@ export default function ProductsInCart() {
     return (
         <>
             {cart.length === 0 ? 
-                <div className="text-center">
+                <div className="text-center mx-auto">
                     <p className="border-b border-black pb-1 mb-1 text-2xl font-semibold lg:border-0">Your cart is empty</p>
                     <Link href="/catalogue">View Catalogue</Link>
                 </div>
