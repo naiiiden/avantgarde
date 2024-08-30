@@ -52,7 +52,7 @@ export default async function Page({ searchParams }) {
                 <ul style={searchParams.cols < 6 ? { gridTemplateColumns: `repeat(${searchParams.cols}, minmax(0, 1fr))` } : undefined} className="products-list-reveal grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {data.data.map((item, index) =>
                         <li key={index} className="relative">
-                            <Link className="group" href={`product/${item.attributes.urlHandle}`}>
+                            <Link className="group" href={`product/${item.attributes.urlHandle}/?sortBy=${searchParams.sortBy}`}>
                                 {item.attributes?.image?.data?.attributes?.url ? (
                                         <Image className="group-hover:opacity-[.0225] group-focus-within:opacity-[.0225] transition-opacity duration-500 w-full" unoptimized src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={1500} height={1500} alt=""/>
                                     ) : (
@@ -90,7 +90,7 @@ export default async function Page({ searchParams }) {
                     <ul className="products-list-reveal grid">
                         {data.data.map((item, index) =>
                             <li key={index} className="border-b last:border-b-0 border-black transition-all duration-500 group">
-                                <Link className="flex py-2 text-sm" href={`product/${item.attributes.urlHandle}`}>
+                                <Link className="flex py-2 text-sm" href={`product/${item.attributes.urlHandle}/?sortBy=${searchParams.sortBy}`}>
                                     {item.attributes?.image?.data?.attributes?.url ? (
                                         <Image unoptimized className="w-full max-w-24 sm:max-w-32 lg:max-w-40 group-hover:max-w-28 group-hover:sm:max-w-44 group-hover:lg:max-w-56 group-hover:xl:max-w-60 group-focus-within:max-w-28 group-focus-within:sm:max-w-44 group-focus-within:lg:max-w-56 group-focus-within:xl:max-w-60 transition-all duration-500" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
                                     ) : (
