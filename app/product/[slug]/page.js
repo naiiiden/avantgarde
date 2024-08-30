@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getData } from "@/app/utilities/getData";
@@ -59,9 +60,13 @@ export default async function Page({ params }) {
                 </div>
                 <AddToCartButton productToAdd={currentProduct.data[0]}/>
             </HeaderHeightStickyVal>
-            <div className="max-lg:mt-12 flex-grow mt-auto lg:sticky lg:right-0 lg:bottom-0 flex flex-col justify-end items-end lg:flex-row">
-                <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto max-w-36" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
-                <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto max-w-36" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+            <div className="max-lg:mt-12 flex-grow mt-auto lg:sticky lg:right-0 lg:bottom-0 flex justify-end items-end lg:flex-row">
+                <Link className="opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-36 hover:max-w-40 focus-visible:max-w-40 transition-all duration-500" href={`/catalogue`}>
+                    <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+                </Link>
+                <Link className="opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-36 hover:max-w-40 focus-visible:max-w-40 transition-all duration-500" href={`/catalogue`}>
+                    <Image blurDataURL={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="" priority src={`http://localhost:1337${currentProduct.data[0].attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+                </Link>
             </div>
         </main>
     )
