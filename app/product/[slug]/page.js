@@ -27,6 +27,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
+    const data = await getData('http://localhost:1337/api/products?populate=image&pagination[pageSize]=99');
+
+    const currentProduct2 = data.data.find((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle );
+    console.log(777, currentProduct2);
+
     let currentProduct;
 
     try {
@@ -38,6 +43,8 @@ export default async function Page({ params }) {
     if (!currentProduct || currentProduct.data.length === 0) {
         notFound();
     }
+
+    console.log(666, currentProduct);
 
     return (
         <main className="lg:px-0 flex flex-col gap-4 lg:flex-row lg:pb-0 mt-auto">
