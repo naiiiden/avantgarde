@@ -23,18 +23,20 @@ export default async function Page({ searchParams }) {
         searchParams.sortBy = 'alphabeticalAtoZ';
     }
 
+    let sortedData = [...data.data];
+
     switch (searchParams.sortBy) {
         case "alphabeticalAtoZ":
-            data.data.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name));
+            sortedData.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name));
             break;
         case "alphabeticalZtoA":
-            data.data.sort((a, b) => b.attributes.name.localeCompare(a.attributes.name));
+            sortedData.sort((a, b) => b.attributes.name.localeCompare(a.attributes.name));
             break;
         case "priceAscending":
-            data.data.sort((a, b) => a.attributes.price - b.attributes.price);
+            sortedData.sort((a, b) => a.attributes.price - b.attributes.price);
             break;
         case "priceDescending":
-            data.data.sort((a, b) => b.attributes.price - a.attributes.price);
+            sortedData.sort((a, b) => b.attributes.price - a.attributes.price);
             break;
         default:
             break;
@@ -50,7 +52,7 @@ export default async function Page({ searchParams }) {
             </div>
             {searchParams.view === "grid" &&
                 <ul style={searchParams.cols < 6 ? { gridTemplateColumns: `repeat(${searchParams.cols}, minmax(0, 1fr))` } : undefined} className="products-list-reveal grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                    {data.data.map((item, index) =>
+                    {sortedData.map((item, index) =>
                         <li key={index} className="relative">
                             <Link className="group" href={`product/${item.attributes.urlHandle}/?sortBy=${searchParams.sortBy}`}>
                                 {item.attributes?.image?.data?.attributes?.url ? (
@@ -88,7 +90,7 @@ export default async function Page({ searchParams }) {
                         </div>
                     </div>
                     <ul className="products-list-reveal grid">
-                        {data.data.map((item, index) =>
+                        {sortedData.map((item, index) =>
                             <li key={index} className="border-b last:border-b-0 border-black transition-all duration-500 group">
                                 <Link className="flex py-2 text-sm" href={`product/${item.attributes.urlHandle}/?sortBy=${searchParams.sortBy}`}>
                                     {item.attributes?.image?.data?.attributes?.url ? (
