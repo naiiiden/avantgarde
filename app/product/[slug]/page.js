@@ -87,12 +87,12 @@ export default async function Page({ params, searchParams }) {
                 <AddToCartButton productToAdd={currentProduct}/>
             </HeaderHeightStickyVal>
             <div className="max-lg:mt-12 flex-grow mt-auto lg:sticky lg:right-0 lg:bottom-0 flex justify-end items-end lg:flex-row">
-                <Link className="transition-all duration-500 opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 hover:max-w-36 focus-visible:max-w-36 xl:max-w-36 xl:hover:max-w-40 xl:focus-visible:max-w-40 3xl:max-w-40 3xl:hover:max-w-44 3xl:focus-visible:max-w-44 4xl:max-w-44 4xl:hover:max-w-48 4xl:focus-visible:max-w-48" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                {previousProduct && <Link className="transition-all duration-500 opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 hover:max-w-36 focus-visible:max-w-36 xl:max-w-36 xl:hover:max-w-40 xl:focus-visible:max-w-40 3xl:max-w-40 3xl:hover:max-w-44 3xl:focus-visible:max-w-44 4xl:max-w-44 4xl:hover:max-w-48 4xl:focus-visible:max-w-48" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                     <Image blurDataURL={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="" priority src={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Previous product"/>
-                </Link>
-                <Link className="transition-all duration-500 opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 hover:max-w-36 focus-visible:max-w-36 xl:max-w-36 xl:hover:max-w-40 xl:focus-visible:max-w-40 3xl:max-w-40 3xl:hover:max-w-44 3xl:focus-visible:max-w-44 4xl:max-w-44 4xl:hover:max-w-48 4xl:focus-visible:max-w-48" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                </Link>}
+                {nextProduct && <Link className="transition-all duration-500 opacity-65 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 hover:max-w-36 focus-visible:max-w-36 xl:max-w-36 xl:hover:max-w-40 xl:focus-visible:max-w-40 3xl:max-w-40 3xl:hover:max-w-44 3xl:focus-visible:max-w-44 4xl:max-w-44 4xl:hover:max-w-48 4xl:focus-visible:max-w-48" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                     <Image blurDataURL={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="" priority src={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Next product"/>
-                </Link>
+                </Link>}
             </div>
         </main>
     )
