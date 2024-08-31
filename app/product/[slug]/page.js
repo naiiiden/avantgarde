@@ -26,10 +26,33 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params, searchParams }) {
     const data = await getData('http://localhost:1337/api/products?populate=image&pagination[pageSize]=99');
 
-    const currentProduct = data.data.find((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle );
+    const sortBy = searchParams.sortBy || 'alphabeticalAtoZ';
+
+    let sortedData = [...data.data];
+
+    switch (sortBy) {
+        case 'alphabeticalAtoZ':
+            sortedData.sort((a, b) => a.attributes.name.localeCompare(b.attributes.name));
+            break;
+        case 'alphabeticalZtoA':
+            sortedData.sort((a, b) => b.attributes.name.localeCompare(a.attributes.name));
+            break;
+        case 'priceAscending':
+            sortedData.sort((a, b) => a.attributes.price - b.attributes.price);
+            break;
+        case 'priceDescending':
+            sortedData.sort((a, b) => b.attributes.price - a.attributes.price);
+            break;
+        default:
+            break;
+    }
+
+    console.log(555, sortedData);
+
+    const currentProduct = sortedData.find((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle);
 
     if (!currentProduct) {
         notFound();
