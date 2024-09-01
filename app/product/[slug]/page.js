@@ -52,18 +52,19 @@ export default async function Page({ params, searchParams }) {
 
     console.log(555, sortedData);
 
-    const currentProduct = sortedData.find((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle);
+    const currentProductIndex = sortedData.findIndex((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle);
 
-    if (!currentProduct) {
+    const currentProduct = sortedData[currentProductIndex];
+
+    if (!currentProduct || currentProductIndex === -1) {
         notFound();
     }
 
-    const currentIndex = sortedData.findIndex(
-        (product) => product.attributes.urlHandle === currentProduct.attributes.urlHandle
-    );
+    const previousProductIndex = (currentProductIndex - 1 + sortedData.length) % sortedData.length;
+    const nextProductIndex = (currentProductIndex + 1) % sortedData.length;
 
-    const previousProduct = sortedData[currentIndex - 1] || null;
-    const nextProduct = sortedData[currentIndex + 1] || null;
+    const previousProduct = sortedData[previousProductIndex];
+    const nextProduct = sortedData[nextProductIndex];
 
     return (
         <main className="mt-auto">
