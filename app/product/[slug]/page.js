@@ -66,7 +66,7 @@ export default async function Page({ params, searchParams }) {
     const nextProduct = sortedData[currentIndex + 1] || null;
 
     return (
-        <main className="">
+        <main className="mt-auto">
             <h1 className="text-2xl px-4 mb-4 sm:mb-10"><span className="font-semibold">{currentProduct.attributes.name}</span> by {currentProduct.attributes.creator}, <span className="font-semibold">{currentProduct.attributes.date}</span></h1>
             <div className="lg:px-0 flex flex-col gap-4 lg:flex-row lg:pb-0 mt-auto">
                 {currentProduct.attributes?.image?.data?.attributes?.url ? (
