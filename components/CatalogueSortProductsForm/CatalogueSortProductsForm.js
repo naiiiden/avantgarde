@@ -9,11 +9,8 @@ export default function CatalogueSortProductsForm({ currentSortBy }) {
     function handleSort(type) {
         const params = new URLSearchParams(searchParams);
         params.set('sortBy', type);
-        console.log("params: ", params.toString());
         router.push(`${pathname}?${params.toString()}`);
     }
-
-    console.log(555, currentSortBy);
 
     return (
         <form className="pb-4 flex flex-wrap gap-x-2 justify-end">

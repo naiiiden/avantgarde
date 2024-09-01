@@ -8,8 +8,6 @@ import { CartContext } from "@/app/context/CartContext";
 export default function ProductsInCart() {
     const { cart, changeItemQuantity, removeItemFromCart } = useContext(CartContext);
 
-    console.log(1, cart);
-
     let totalCost = 0;
     cart.forEach(item => {
         totalCost += item.attributes.price * item.quantity;

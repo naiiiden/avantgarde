@@ -6,8 +6,6 @@ import { useState } from "react";
 export default function SplashScreenClient({ data }) {
     const [splashViewed, setSplashViewed] = useState(sessionStorage.getItem("splashShown"));
 
-    console.log(data);
-
     function closeSplash() {
         sessionStorage.setItem("splashShown", "true");
         setSplashViewed(true);

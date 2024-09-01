@@ -50,8 +50,6 @@ export default async function Page({ params, searchParams }) {
             break;
     }
 
-    console.log(555, sortedData);
-
     const currentProductIndex = sortedData.findIndex((product) => decodeURIComponent(params.slug) === product.attributes.urlHandle);
 
     const currentProduct = sortedData[currentProductIndex];

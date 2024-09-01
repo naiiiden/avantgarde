@@ -9,7 +9,6 @@ export default function CatalogueProductsViewForm({ currentView }) {
     function handleSort(type) {
         const params = new URLSearchParams(searchParams);
         params.set('view', type);
-        console.log("params: ", params.toString());
         router.push(`${pathname}?${params.toString()}`);
     }
 
