@@ -57,14 +57,16 @@ swiper-slide:not(.swiper-slide-active) a {
 }
 
 .information-rich-text h2 {
-    margin-top: 5rem;
     margin-bottom: 0.5rem; 
     font-size: 1.5rem;
     line-height: 2rem; 
     font-weight: 700; 
 
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+
     @media (min-width: 768px) { 
-        margin-bottom: 1rem; 
         font-size: 1.875rem;
         line-height: 2.25rem; 
     }
@@ -75,8 +77,6 @@ swiper-slide:not(.swiper-slide-active) a {
 }
 
 .information-rich-text p {
-    font-size: 1.125rem;
-    line-height: 1.75rem; 
     font-weight: 500; 
     margin-bottom: .5rem;
 }
