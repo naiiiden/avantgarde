@@ -67,7 +67,7 @@ export default async function Page({ params, searchParams }) {
 
     return (
         <main className="mt-auto">
-            <h1 className="font-semibold text-2xl md:text-4xl lg:text-6xl 2xl:text-7xl 4xl:text-8xl px-4 mb-4 sm:mb-10">{currentProduct.attributes.name} by {currentProduct.attributes.creator}, {currentProduct.attributes.date}</h1>
+            <h1 className="font-semibold text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl 4xl:text-7xl px-4 mb-4 sm:mb-10">{currentProduct.attributes.name} by {currentProduct.attributes.creator}, {currentProduct.attributes.date}</h1>
             <div className="lg:px-0 flex flex-col gap-4 lg:flex-row lg:pb-0 mt-auto">
                 {currentProduct.attributes?.image?.data?.attributes?.url ? (
                     <Image blurDataURL={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[40%] 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl" priority src={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
