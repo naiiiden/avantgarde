@@ -57,7 +57,7 @@ export default function CustomCursor() {
     return (
         <div
             style={{ ...cursorPosition }}
-            className={`${isHovering ? "block" : "hidden"} uppercase fixed pointer-events-none select-none z-10 font-bold text-4xl tracking-tighter min-w-40`}
+            className={`${isHovering ? "block" : "hidden"} uppercase fixed pointer-events-none select-none z-10 font-bold text-3xl min-w-40`}
         >
             <span className="-ml-28">{hoverText}</span>
         </div>

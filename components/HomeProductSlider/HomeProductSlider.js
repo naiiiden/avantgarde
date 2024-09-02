@@ -68,7 +68,7 @@ export default function HomeProductSlider({ data }) {
                     </swiper-slide>
                 )}
             </swiper-container>
-            <div style={{ ...cursorPosition }} className="hidden lg:group-hover:block uppercase fixed pointer-events-none select-none z-10 font-bold text-4xl tracking-tighter min-w-40">
+            <div style={{ ...cursorPosition }} className="hidden lg:group-hover:block uppercase fixed pointer-events-none select-none z-10 font-bold text-3xl min-w-40">
                 {hoverOnProductLink === true ? 
                     <span className="-ml-28">View product</span>
                     :
