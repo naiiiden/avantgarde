@@ -66,35 +66,31 @@ export default async function Page({ params, searchParams }) {
     const nextProduct = sortedData[nextProductIndex];
 
     return (
-        <main className="mt-auto">
-            <h1 className="font-semibold text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl 4xl:text-7xl px-4 mb-4 sm:mb-10">{currentProduct.attributes.name} by {currentProduct.attributes.creator}, {currentProduct.attributes.date}</h1>
-            <div className="lg:px-0 flex flex-col gap-4 lg:flex-row lg:pb-0 mt-auto">
+        <main className="mt-auto max-w-4xl ml-auto">
+            <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl max-lg:px-4 mt-6 mb-10">{currentProduct.attributes.name} by {currentProduct.attributes.creator}, {currentProduct.attributes.date}</h1>
+            <div className="grid gap-4">
                 {currentProduct.attributes?.image?.data?.attributes?.url ? (
-                    <Image blurDataURL={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-auto lg:max-w-[40%] xl:max-w-[50%] 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl" priority src={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
+                    <Image blurDataURL={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="w-full" priority src={`http://localhost:1337${currentProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt=""/>
                 ) : (
-                    <div className="text-center text-xs w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto">
+                    <div className="text-center text-xs w-full">
                         <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" height="56px" viewBox="0 -960 960 960" width="56px" fill="#0c0c0c"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
                         Image not available
                     </div>
                 )}
-                <HeaderHeightStickyVal className={"pb-4"}>
-                    <div className={`max-w-[22rem] lg:max-w-[18.75rem] ml-auto text-sm ${!currentProduct.attributes?.image?.data?.attributes?.url ? 'lg:pb-4' : ''}`}>
-                        <div className="max-lg:px-4">
-                            {currentProduct.attributes.description !== null && <p className="mb-4">{currentProduct.attributes.description}</p>}
-                            <p><span className="font-semibold">Material(s):</span> {currentProduct.attributes.medium}</p>
-                            <p><span className="font-semibold">Dimensions: </span>{currentProduct.attributes.dimensions}</p>
-                        </div>
-                    </div>
+                <div className={`px-4 lg:pl-0 lg:text-lg pb-4`}>
+                    {currentProduct.attributes.description !== null && <p className="mb-4">{currentProduct.attributes.description}</p>}
+                    <p><span className="font-semibold">Material(s):</span> {currentProduct.attributes.medium}</p>
+                    <p><span className="font-semibold">Dimensions: </span>{currentProduct.attributes.dimensions}</p>
                     <AddToCartButton productToAdd={currentProduct}/>
-                </HeaderHeightStickyVal>
-                <div className="max-lg:mt-12 flex-grow mt-auto lg:sticky lg:right-0 lg:bottom-0 flex justify-end items-end lg:flex-row">
-                    {previousProduct && <Link data-cursor-text="Previous product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 2xl:max-w-36" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                </div>
+                {/* <div className="max-lg:mt-12 flex-grow mt-auto lg:stickys lg:right-0 lg:bottom-0 flex justify-end items-end lg:flex-row">
+                    {previousProduct && <Link data-cursor-text="Previous product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto min-w-32 max-w-32 2xl:min-w-36 2xl:max-w-36" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                         <Image blurDataURL={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="aspect-square object-cover" priority src={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Previous product"/>
                     </Link>}
-                    {nextProduct && <Link data-cursor-text="Next product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto max-w-32 2xl:max-w-36" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                    {nextProduct && <Link data-cursor-text="Next product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto min-w-32 max-w-32 2xl:min-w-36 2xl:max-w-36" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                         <Image blurDataURL={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="aspect-square object-cover" priority src={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Next product"/>
                     </Link>}
-                </div>
+                </div> */}
             </div>
         </main>
     )

@@ -19,9 +19,9 @@ export default function AddToCartButton({ productToAdd }) {
     }, [cart, productToAdd]);
 
     return buttonText === "Add to cart" ? 
-        <button onClick={() => addToCart(productToAdd)} className="mt-4 font-semibold outline outline-1 focus-visible:outline-[3px] w-full p-4 lg:p-2.5 uppercase flex items-center justify-center gap-2">
+        <button onClick={() => addToCart(productToAdd)} className="lg:text-lg mt-4 font-semibold border border-black focus-visible:outline-[3px] w-full p-4 lg:p-2.5 uppercase flex items-center justify-center gap-2">
                 {buttonText} <span className="text-sm opacity-65">[ €{productToAdd.attributes.price} ]</span>
         </button>
         :    
-        <Link className="block text-center mt-4 font-semibold outline outline-1 focus-visible:outline-[3px] w-full p-4 lg:p-2.5 uppercase" href="/cart">{buttonText}</Link>
+        <Link className="lg:text-lg block text-center mt-4 font-semibold border border-black focus-visible:outline-[3px] w-full p-4 lg:p-2.5 uppercase" href="/cart">{buttonText}</Link>
 }
