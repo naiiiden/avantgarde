@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function CustomCursor({ hoverText }) {
+export default function CustomCursor() {
     const [cursorPosition, setCursorPosition] = useState({ top: -100, left: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [hoverText, setHoverText] = useState("");
 
     const updateCursorPosition = (e) => {
         setCursorPosition({ top: `${e.clientY - 14}px`, left: `${e.clientX - 10}px` });
@@ -16,8 +17,16 @@ export default function CustomCursor({ hoverText }) {
             }
         };
 
-        const handleMouseEnter = () => setIsHovering(true);
-        const handleMouseLeave = () => setIsHovering(false);
+        const handleMouseEnter = (e) => {
+            const text = e.target.getAttribute("data-cursor-text");
+            setHoverText(text);
+            setIsHovering(true);
+        };
+
+        const handleMouseLeave = () => {
+            setIsHovering(false);
+            setHoverText("");
+        };
 
         const attachListeners = () => {
             const linkElements = document.querySelectorAll("[data-cursor-text]");
