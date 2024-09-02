@@ -83,14 +83,14 @@ export default async function Page({ params, searchParams }) {
                     <p><span className="font-semibold">Dimensions: </span>{currentProduct.attributes.dimensions}</p>
                     <AddToCartButton productToAdd={currentProduct}/>
                 </div>
-                {/* <div className="max-lg:mt-12 flex-grow mt-auto lg:stickys lg:right-0 lg:bottom-0 flex justify-end items-end lg:flex-row">
-                    {previousProduct && <Link data-cursor-text="Previous product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto min-w-32 max-w-32 2xl:min-w-36 2xl:max-w-36" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                <div className="mt-20 lg:mt-40 flex justify-end">
+                    {previousProduct && <Link data-cursor-text="Previous product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-1/3 md:w-1/4" href={`/product/${previousProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                         <Image blurDataURL={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="aspect-square object-cover" priority src={`http://localhost:1337${previousProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Previous product"/>
                     </Link>}
-                    {nextProduct && <Link data-cursor-text="Next product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-auto min-w-32 max-w-32 2xl:min-w-36 2xl:max-w-36" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
+                    {nextProduct && <Link data-cursor-text="Next product" className="transition-all duration-500 opacity-50 hover:opacity-100 focus-visible:opacity-100 w-1/3 md:w-1/4" href={`/product/${nextProduct.attributes.urlHandle}?sortBy=${sortBy}`}>
                         <Image blurDataURL={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} placeholder="blur" unoptimized className="aspect-square object-cover" priority src={`http://localhost:1337${nextProduct.attributes.image.data.attributes.url}`} width={2000} height={2000} alt="Next product"/>
                     </Link>}
-                </div> */}
+                </div>
             </div>
         </main>
     )
