@@ -92,7 +92,7 @@ export default async function Page({ searchParams }) {
                     </div>
                     <ul className="products-list-reveal grid">
                         {sortedData.map((item, index) =>
-                            <li key={index} className="border-b last:border-b-0 border-black transition-all duration-500 group">
+                            <li key={index} className="border-b last:border-b-0 first:border-t first:mt-2 border-black transition-all duration-500 group">
                                 <Link data-cursor-text="View product" className="cursor-none flex py-2 text-sm" href={`product/${item.attributes.urlHandle}/?sortBy=${searchParams.sortBy}`}>
                                     {item.attributes?.image?.data?.attributes?.url ? (
                                         <Image unoptimized className="w-full max-w-24 sm:max-w-32 lg:max-w-40 group-hover:max-w-28 group-hover:sm:max-w-44 group-hover:lg:max-w-56 group-hover:xl:max-w-60 group-focus-within:max-w-28 group-focus-within:sm:max-w-44 group-focus-within:lg:max-w-56 group-focus-within:xl:max-w-60 transition-all duration-500" src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} priority width={200} height={200} alt="" />
