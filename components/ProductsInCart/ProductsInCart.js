@@ -34,12 +34,12 @@ export default function ProductsInCart() {
     return (
         <>
             {cart.length === 0 ? 
-                <div className="w-full max-w-5xl text-center">
+                <div className="w-full max-w-4xl text-center">
                     <p className="pb-1 mb-1 text-2xl font-semibold">Your cart is empty</p>
                     <Link href="/catalogue">View Catalogue</Link>
                 </div>
                 :
-                <div className="w-full max-w-5xl">
+                <div className="w-full max-w-4xl">
                     <ul className="ml-auto px-4">
                         {cart.map((item, index) =>                    
                             <li className="w-full flex gap-4 border-b last:border-b-0 border-black py-2 first:pt-0" key={index}>
