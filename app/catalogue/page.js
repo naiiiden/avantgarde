@@ -69,9 +69,10 @@ export default async function Page({ searchParams }) {
                                     <p aria-hidden="true"><span className="font-semibold">Material(s):</span> {item.attributes.medium}</p>
                                     <p aria-hidden="true"><span className="font-semibold">Dimensions: </span>{item.attributes.dimensions}</p>
                                 </div>
-                                <div className="flex text-xs justify-between p-1.5">
+                                <div className="flex gap-2 text-[.6875rem] sm:text-xs p-1.5">
+                                    <div aria-hidden="true" className="font-bold">{(index + 1).toString().padStart(2, '0')}</div>
                                     <h2><span className="font-semibold">{item.attributes.name}</span> by {item.attributes.creator}</h2>
-                                    <div aria-hidden="true" className="top-0 font-bold">{(index + 1).toString().padStart(2, '0')}</div>
+                                    <p aria-hidden="true" className="ml-auto font-bold">€{item.attributes.price}</p>
                                 </div>
                             </Link>
                         </li>
