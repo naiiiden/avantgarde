@@ -63,7 +63,7 @@ export default function HomeProductSlider({ data }) {
                                     Image not available
                                 </div>
                             )}
-                            <h2 className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto font-semibold uppercase text-[.5rem] md:text-[.625rem]">{item.attributes.name}</h2>
+                            <h2 className="w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] max-w-2xl mx-auto font-semibold text-[.625rem] md:text-[.75rem]">{item.attributes.name}</h2>
                         </Link>
                     </swiper-slide>
                 )}
