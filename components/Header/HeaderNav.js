@@ -10,8 +10,8 @@ export default function HeaderNav({ data }) {
     const { cart } = useContext(CartContext);
 
     return (
-        <nav className="ml-auto overflow-x-auto">
-            <ul className="text-end flex gap-4">
+        <nav className="ml-auto mb-4 px-4 w-full capitalize flex justify-end sticky top-4 z-40">
+            <ul className="text-end flex gap-4 overflow-x-auto ">
                 {data.attributes['Header'].links.map((link) => 
                     <li key={link.text}>
                         <Link href={`/${link.url}`} className={`${pathname === `/${link.url}` ? 'underline italic opacity-100' : 'opacity-65 hover:underline hover:opacity-100'} decoration-2 leading-none inline-flex font-semibold`}>
