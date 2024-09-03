@@ -5,12 +5,22 @@ All image rights belong to Google’s Arts and Culture and their respective owne
 
 ![Gif](/images//project_showcase.gif)
 
-![Mobile home](/images/home_mobile.png)
-![Desktop home](/images/home_desktop.png)
-![Mobile catalogue](/images/catalogue_mobile.png)
-![Desktop catalogue](/images/catalogue_desktop.png)
-![Mobile product](/images/product_mobile.png)
-![Desktop product](/images/product_desktop.png)
+![Mobile splash](/images/splash_m.png)
+![Desktop splash](/images/splash_d.png)
+![Mobile home](/images/home_m.png)
+![Desktop home](/images/home_d.png)
+![Mobile catalogue index](/images/catalogue_index_m.png)
+![Desktop catalogue index](/images/catalogue_index_d.png)
+![Mobile catalogue grid](/images/catalogue_grid_m.png)
+![Desktop catalogue grid](/images/catalogue_grid_d.png)
+![Mobile product](/images/product_m.png)
+![Desktop product](/images/product_d.png)
+![Mobile cart](/images/cart_m.png)
+![Desktop cart](/images/cart_d.png)
+![Mobile contact](/images/contact_m.png)
+![Desktop contact](/images/contact_d.png)
+![Mobile information](/images/information_m.png)
+![Desktop information](/images/information_d.png)
 
 ## Getting Started
 
