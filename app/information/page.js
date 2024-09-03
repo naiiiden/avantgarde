@@ -12,6 +12,7 @@ export default async function Page() {
 
     return (
         <main className="px-4 pb-4 max-w-4xl ml-auto">
+            <h1 className="sr-only">Information</h1>
             <ReactMarkdown className="information-rich-text">
                 {data.data.attributes['InformationContent']}
             </ReactMarkdown>
